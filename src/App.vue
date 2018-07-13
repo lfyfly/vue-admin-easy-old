@@ -9,11 +9,13 @@
 <script>
 // layouts
 import BlankLayout from '@/lib/layouts/BlankLayout'
+import HeaderSideLayout from '@/lib/layouts/HeaderSideLayout'
 
 export default {
   name: 'App',
   components: {
-    BlankLayout
+    BlankLayout,
+    HeaderSideLayout
   }
 }
 </script>

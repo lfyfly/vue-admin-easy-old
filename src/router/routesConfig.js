@@ -1,15 +1,30 @@
 // pages
-import Login from '@/pages/Login'
-import Register from '@/pages/Register'
-import ForgetPassword from '@/pages/ForgetPassword'
-import ResetPassword from '@/pages/ResetPassword'
-import Index from '@/pages/Index/index'
+// import Login from '@/pages/Login'
+const Login = () => import('@/pages/Login')
+const Register = () => import('@/pages/Register')
+const ForgetPassword = () => import('@/pages/ForgetPassword')
+const ResetPassword = () => import('@/pages/ResetPassword')
+const NotFind = () => import('@/pages/NotFind')
+const Index = () => import('@/pages/Index/index')
+const Users = () => import('@/pages/Users')
+
 export default [
   {
     path: '/',
+    redirect: { path: '/index' }
+  },
+  {
+    path: '/index',
     component: Index,
     meta: {
-      layout: 'BlankLayout'
+      layout: 'HeaderSideLayout'
+    }
+  },
+  {
+    path: '/users',
+    component: Users,
+    meta: {
+      layout: 'HeaderSideLayout'
     }
   },
   {
@@ -39,5 +54,14 @@ export default [
     meta: {
       layout: 'BlankLayout'
     }
-  }
+  },
+  {
+    path: '/404',
+    component: NotFind,
+    meta: {
+      layout: 'BlankLayout'
+    }
+  },
+  { path: '*', redirect: '/404' }
+
 ]

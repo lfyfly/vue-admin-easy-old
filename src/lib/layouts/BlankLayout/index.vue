@@ -13,7 +13,7 @@ export default {
     }
   },
   created () {
-    alert('layout')
+    console.log('BlankLayout')
   }
 }
 </script>
