@@ -1,0 +1,14 @@
+[
+  {
+    "role": "guest",
+    "routes": []
+  },
+  {
+    "role": "user",
+    "routes": []
+  },
+  {
+    "role": "admin",
+    "routes": []
+  }
+]
