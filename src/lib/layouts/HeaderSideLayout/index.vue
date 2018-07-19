@@ -1,10 +1,23 @@
 <template>
   <div class="header-side-layout">
-    <div class="header-container">
-      <my-header></my-header>
+    <div class="my-header">
+      <div class="header-left-container">
+        <div class="logo-container">
+          <logo/>
+        </div>
+        <div class="toggle-btn-container">
+          <toggle-btn/>
+        </div>
+        <div class="header-nav-container">
+          <header-nav/>
+        </div>
+      </div>
+      <div class="header-right-container">
+        <header-right/>
+      </div>
     </div>
     <div class="side-container">
-      <my-side></my-side>
+      <side-nav/>
     </div>
     <div class="page-container">
       <slot>page-container</slot>
@@ -13,13 +26,19 @@
 </template>
 
 <script>
-import myHeader from './deafultSlots/Header.vue'
-import mySide from './deafultSlots/Side.vue'
+import HeaderRight from './deafultSlots/HeaderRight.vue'
+import HeaderNav from './deafultSlots/HeaderNav.vue'
+import SideNav from './deafultSlots/SideNav.vue'
+import Logo from './deafultSlots/Logo.vue'
+import ToggleBtn from './deafultSlots/ToggleBtn.vue'
 export default {
   name: 'header-side-layout',
   components: {
-    myHeader,
-    mySide
+    HeaderRight,
+    HeaderNav,
+    SideNav,
+    Logo,
+    ToggleBtn
   },
   data () {
     return {
@@ -36,12 +55,25 @@ export default {
 @import "./config.scss";
 
 .header-side-layout {
-  .header-container {
+  .my-header {
     width: 100%;
     position: fixed;
     top: 0;
     background: #ccc;
     height: $header-height;
+    .header-left-container {
+      display: table;
+      float: left;
+      height: $header-height;
+      & > * {
+        vertical-align: middle;
+        display: table-cell;
+      }
+    }
+    .header-right-container {
+      float: right;
+      height: $header-height;
+    }
   }
   .side-container {
     width: $side-width;

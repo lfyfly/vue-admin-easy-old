@@ -1,0 +1,50 @@
+export default [
+  {
+    title: 'A',
+    icon: 'A',
+    sideNav: [
+      {
+        title: 'a1',
+        icon: 'a1',
+        children: [
+          { title: 'a1-1', path: '/a1/1' },
+          { title: 'a1-2', path: '/a1/2' },
+          { title: 'a1-3', path: '/a1/3' }
+        ]
+      },
+      {
+        title: 'a2',
+        icon: 'a2',
+        children: [
+          { title: 'a2-1', path: '/a2/1' },
+          { title: 'a2-2', path: '/a2/2' },
+          { title: 'a2-3', path: '/a2/3' }
+        ]
+      }
+    ]
+  },
+  {
+    title: 'B',
+    icon: 'B',
+    sideNav: [
+      {
+        title: 'b1',
+        icon: 'b1',
+        children: [
+          { title: 'b1-1', path: '/b1/1' },
+          { title: 'b1-2', path: '/b1/2' },
+          { title: 'b1-3', path: '/b1/3' }
+        ]
+      },
+      {
+        title: 'b2',
+        icon: 'b2',
+        children: [
+          { title: 'b2-1', path: '/b2/1' },
+          { title: 'b2-2', path: '/b2/2' },
+          { title: 'b2-3', path: '/b2/3' }
+        ]
+      }
+    ]
+  }
+]

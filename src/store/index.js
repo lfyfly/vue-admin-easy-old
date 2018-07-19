@@ -6,12 +6,23 @@ const store = new Vuex.Store({
   state: {
     userInfo: null,
     isMobile: /(iPhone|iPod|iPad|Android|ios)/.test(navigator.userAgent),
-    layout: '',
+    layout: null,
+    sideNav: null,
+    headerNav: null,
     msg: 'msg from vuex'
   },
   mutations: {
-    setLayout (state, layout) {
-      state.layout = layout
+    setLayout (state, playload) {
+      state.layout = playload
+    },
+    setMyInfo (state, playload) {
+      state.myInfo = playload
+    },
+    setHeaderNav (state, playload) {
+      state.headerNav = playload
+    },
+    setSideNav (state, playload) {
+      state.sideNav = playload
     }
   }
 })

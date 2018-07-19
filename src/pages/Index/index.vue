@@ -1,6 +1,7 @@
 <template>
   <div class="index">
     <h3>{{msg}}</h3>
+    <el-button>阿萨德</el-button>
   </div>
 </template>
 
