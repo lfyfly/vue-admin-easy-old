@@ -1,7 +1,7 @@
 <template>
   <div class="header-nav">
     <ul>
-      <li v-for="navItem in headerNav" :key="navItem.title">
+      <li v-for="(navItem,i) in headerNav" @click="toggleSideNav(i)" :key="navItem.title">
         <router-link :to="navItem.path">{{navItem.title}}</router-link>
       </li>
     <p></p>
@@ -20,6 +20,11 @@ export default {
   },
   computed: {
     ...mapState(['headerNav'])
+  },
+  methods: {
+    toggleSideNav (index) {
+      this.$store.commit('toggleSideNav', index)
+    }
   }
 }
 </script>

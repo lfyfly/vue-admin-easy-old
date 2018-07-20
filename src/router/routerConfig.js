@@ -89,7 +89,6 @@ export default [
     meta: {
       layout: 'HeaderSideLayout'
     }
-  },
-  { path: '*', redirect: '/404' }
+  }
 
 ]

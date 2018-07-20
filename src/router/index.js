@@ -6,7 +6,6 @@ import navConfig from './navConfig'
 import until from '@/until'
 import store from '@/store'
 import api from '@/api'
-
 Vue.use(Router)
 const router = new Router({
   routes: guestRouter
@@ -14,8 +13,7 @@ const router = new Router({
 router.beforeEach(async (to, from, next) => {
   let tocken = localStorage.tocken
   store.commit('setLayout', to.meta.layout)
-
-  if (store.state.myInfo) {
+  if (store.state.myInfo && to.path !== '/login') {
     next()
     return
   }
@@ -25,8 +23,11 @@ router.beforeEach(async (to, from, next) => {
       return
     }
     next('/login')
-    return
   } else {
+    if (to.path === '/login') {
+      next('/')
+      return
+    }
     await api.getMyInfo()
     let routers = store.state.myInfo && store.state.myInfo.routers
     console.log(routers)
@@ -37,12 +38,12 @@ router.beforeEach(async (to, from, next) => {
     // 2. 对menu进行过滤
     let filterNavConfig = until.filterNavConfig(navConfig, routers)
     store.commit('setHeaderNav', filterNavConfig.headerNav)
+    store.commit('setNavConfig', filterNavConfig.navConfig)
     store.commit('setSideNav', filterNavConfig.navConfig[0].sideNav)
-    // console.log(JSON.stringify(filterNavConfig, null, 2))
-    router.addRoutes(filterRouterConfig)
-    console.log(JSON.stringify(filterRouterConfig, null, 2))
-    alert(JSON.stringify(to, null, 2))
+    router.addRoutes(filterRouterConfig.concat([{ path: '*', redirect: '/404' }]))
+    router.push(to.path)
+    next(false)
+    // console.log(JSON.stringify(filterRouterConfig, null, 2))
   }
-  next('/b1/1')
 })
 export default router

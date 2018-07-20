@@ -1,6 +1,6 @@
 <template>
   <div class="toggle-btn">
-    <i class="el-icon-menu"></i>
+    <i class="el-icon-menu" @click="$store.commit('toggleNavCollapse')"></i>
   </div>
 </template>
 
@@ -24,7 +24,7 @@ export default {
   line-height: $size;
   color: #fff;
   cursor: pointer;
-  padding-left: 10px;
+  margin-left: 10px;
 
 }
 </style>

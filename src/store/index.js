@@ -4,11 +4,13 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
-    userInfo: null,
+    myInfo: null,
     isMobile: /(iPhone|iPod|iPad|Android|ios)/.test(navigator.userAgent),
     layout: null,
     sideNav: null,
+    navConfig: null,
     headerNav: null,
+    navCollapse: false,
     msg: 'msg from vuex'
   },
   mutations: {
@@ -21,8 +23,17 @@ const store = new Vuex.Store({
     setHeaderNav (state, playload) {
       state.headerNav = playload
     },
+    setNavConfig (state, playload) {
+      state.navConfig = playload
+    },
     setSideNav (state, playload) {
       state.sideNav = playload
+    },
+    toggleSideNav (state, index) {
+      state.sideNav = state.navConfig[index].sideNav
+    },
+    toggleNavCollapse (state) {
+      state.navCollapse = !state.navCollapse
     }
   }
 })

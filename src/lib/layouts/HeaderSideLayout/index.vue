@@ -16,10 +16,10 @@
         <header-right/>
       </div>
     </div>
-    <div class="side-container">
+    <el-scrollbar class="side-container">
       <side-nav/>
-    </div>
-    <div class="page-container">
+    </el-scrollbar>
+    <div class="page-container" :class="{collapse:navCollapse}">
       <slot>page-container</slot>
     </div>
   </div>
@@ -31,6 +31,7 @@ import HeaderNav from './deafultSlots/HeaderNav.vue'
 import SideNav from './deafultSlots/SideNav.vue'
 import Logo from './deafultSlots/Logo.vue'
 import ToggleBtn from './deafultSlots/ToggleBtn.vue'
+import { mapState } from 'vuex'
 export default {
   name: 'header-side-layout',
   components: {
@@ -45,11 +46,20 @@ export default {
       msg: 'this is from header-side-layout.vue'
     }
   },
+  computed: {
+    ...mapState(['navCollapse'])
+  },
   created () {
     console.log('HeaderSideLayout')
   }
 }
 </script>
+<style>
+.el-scrollbar__wrap {
+  overflow-x: hidden;
+}
+
+</style>
 
 <style lang='scss' scoped>
 @import "./config.scss";
@@ -76,15 +86,19 @@ export default {
     }
   }
   .side-container {
-    width: $side-width;
     top: $header-height;
     bottom: 0;
-    background: #eee;
+    background: #fff;
     position: fixed;
+    border-right: solid 1px #e6e6e6;
   }
   .page-container {
     margin-top: $header-height;
     margin-left: $side-width;
+    transition: margin-left 0.3s;
+  }
+  .page-container.collapse {
+    margin-left: 65px;
   }
 }
 </style>

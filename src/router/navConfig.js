@@ -5,7 +5,7 @@ export default [
     sideNav: [
       {
         title: 'a1',
-        icon: 'a1',
+        icon: 'el-icon-tickets',
         children: [
           { title: 'a1-1', path: '/a1/1' },
           { title: 'a1-2', path: '/a1/2' },
@@ -14,7 +14,7 @@ export default [
       },
       {
         title: 'a2',
-        icon: 'a2',
+        icon: 'el-icon-tickets',
         children: [
           { title: 'a2-1', path: '/a2/1' },
           { title: 'a2-2', path: '/a2/2' },
@@ -29,7 +29,7 @@ export default [
     sideNav: [
       {
         title: 'b1',
-        icon: 'b1',
+        icon: 'el-icon-tickets',
         children: [
           { title: 'b1-1', path: '/b1/1' },
           { title: 'b1-2', path: '/b1/2' },
@@ -38,7 +38,7 @@ export default [
       },
       {
         title: 'b2',
-        icon: 'b2',
+        icon: 'el-icon-tickets',
         children: [
           { title: 'b2-1', path: '/b2/1' },
           { title: 'b2-2', path: '/b2/2' },
