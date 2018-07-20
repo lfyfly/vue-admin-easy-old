@@ -3,7 +3,7 @@
     <h3>{{msg}}</h3>
     <h3>{{$route.path}}</h3>
     <el-button @click="toggle" >toggle dialog</el-button>
-    <el-dialog :visible.sync="show" >
+    <el-dialog :visible.sync="show">
       <div ref="test">test</div>
     </el-dialog>
   </div>
@@ -22,7 +22,7 @@ export default {
     toggle () {
       this.show = true
       this.$nextTick(() => {
-        alert(this.$refs.test)
+        // alert(this.$refs.test)
       })
     }
   }

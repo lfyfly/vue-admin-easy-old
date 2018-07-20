@@ -7,7 +7,7 @@ const store = new Vuex.Store({
     myInfo: null,
     isMobile: /(iPhone|iPod|iPad|Android|ios)/.test(navigator.userAgent),
     layout: null,
-    sideNav: null,
+    sideNavAcitveIndex: NaN,
     navConfig: null,
     headerNav: null,
     navCollapse: false,
@@ -34,6 +34,9 @@ const store = new Vuex.Store({
     },
     toggleNavCollapse (state) {
       state.navCollapse = !state.navCollapse
+    },
+    setNavGroupActiveIndex (state, playload) {
+      state.sideNavAcitveIndex = playload
     }
   }
 })

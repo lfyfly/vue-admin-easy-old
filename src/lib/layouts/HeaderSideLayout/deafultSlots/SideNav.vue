@@ -2,20 +2,19 @@
   <div class="side-nav">
     <!-- <h3>{{msg}}</h3> -->
     <!-- <p>{{sideNav}}</p> -->
-    <el-menu class="el-side-nav" default-active="0-1" :collapse="navCollapse">
-      <el-submenu v-for="(v,i) in sideNav" :index="i+''" :key="v.title">
-        <template slot="title">
-          <i :class="v.icon"></i>
-          <span>{{v.title}}</span>
-        </template>
-        <router-link v-for="(v2,i2) in v.children" :key="v2.title" :to="v2.path">
-          <el-menu-item :index="`${i}-${i2}`">
+    <div class="template" v-for="(sideNav,groupIndex) in (navConfig[0].sideNav?navConfig:[{sideNav:navConfig}])" :key="sideNav.title" v-if="sideNavAcitveIndex===groupIndex">
+      <el-menu class="el-side-nav" :router="true" :default-active="$route.path" :collapse="navCollapse">
+        <el-submenu v-for="(v,i) in sideNav.sideNav" :index="i+''" :key="v.title">
+          <template v-if="v.title" slot="title">
+            <i :class="v.icon"></i>
+            <span>{{v.title}}</span>
+          </template>
+          <el-menu-item v-for="v2 in v.children" :key="v2.title" :index="v2.path">
             {{v2.title}}
           </el-menu-item>
-        </router-link>
-      </el-submenu>
-    </el-menu>
-
+        </el-submenu>
+      </el-menu>
+    </div>
   </div>
 </template>
 
@@ -29,17 +28,18 @@ export default {
     }
   },
   computed: {
-    ...mapState(['sideNav', 'navCollapse'])
+    ...mapState(['navConfig', 'navCollapse', 'sideNavAcitveIndex'])
   }
 }
 </script>
 
 <style lang='scss' scoped>
+@import "../config.scss";
+
 .el-side-nav {
   border-right: none;
-  height: 100%;
   &:not(.el-menu--collapse) {
-    width: 200px;
+    width: $side-width;
   }
 }
 </style>

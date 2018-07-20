@@ -22,7 +22,7 @@ export default function (navConfig, routers) {
     })
     console.log(headerNav, 'headerNav')
   } else {
-    navConfig = filterSideNav(navConfig)
+    navConfig = filterSideNav(navConfig, routers)
   }
   return {
     navConfig,

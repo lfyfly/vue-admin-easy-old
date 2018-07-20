@@ -12,8 +12,8 @@ const router = new Router({
 })
 router.beforeEach(async (to, from, next) => {
   let tocken = localStorage.tocken
-
-  // 当前数组的属于哪个headerNav的组的item
+  alert(to.path)
+  store.commit('setLayout', to.meta.layout)
   if (store.state.navConfig) {
     let index = until.getNavGroupActiveIndex(to.path, store.state.navConfig)
     if (index !== store.state.sideNavAcitveIndex) {
@@ -26,6 +26,7 @@ router.beforeEach(async (to, from, next) => {
     return
   }
   if (!tocken) {
+    alert(1111111111111)
     if (to.path === '/login') {
       next()
       return

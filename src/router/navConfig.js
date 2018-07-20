@@ -1,3 +1,26 @@
+// 无分组导航
+// export default[
+//   {
+//     title: 'a1',
+//     icon: 'el-icon-tickets',
+//     children: [
+//       { title: 'a1-1', path: '/a1/1' },
+//       { title: 'a1-2', path: '/a1/2' },
+//       { title: 'a1-3', path: '/a1/3' }
+//     ]
+//   },
+//   {
+//     title: 'a2',
+//     icon: 'el-icon-tickets',
+//     children: [
+//       { title: 'a2-1', path: '/a2/1' },
+//       { title: 'a2-2', path: '/a2/2' },
+//       { title: 'a2-3', path: '/a2/3' }
+//     ]
+//   }
+// ]
+
+// 分组导航
 export default [
   {
     title: 'A',

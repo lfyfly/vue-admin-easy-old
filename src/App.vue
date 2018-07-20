@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <component :is="$store.state.layout">
+    <component :is="$route.meta.layout">
       <router-view/>
     </component>
   </div>

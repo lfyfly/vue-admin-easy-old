@@ -1,9 +1,8 @@
 <template>
-  <div class="logo">
-  </div>
+  <div class="logo" ></div>
 </template>
-
 <script>
+
 export default {
   name: 'logo',
   data () {
@@ -16,10 +15,9 @@ export default {
 
 <style lang='scss' scoped>
 @import "../config.scss";
-
 .logo {
-  width: $side-width;
-  height: $header-height * .8;
+  width: $header-height * 0.5;
+  height: $header-height * 0.5;
   background: url($logo-url) no-repeat center/contain;
 }
 </style>
