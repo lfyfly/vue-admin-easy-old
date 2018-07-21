@@ -124,7 +124,6 @@ export default {
       padding-left: 65px;
     }
     & .page-container {
-      width: 100%;
       min-height: calc(100vh - #{$header-height});
       background: #fff;
     }

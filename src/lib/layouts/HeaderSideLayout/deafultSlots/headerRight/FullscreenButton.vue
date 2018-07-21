@@ -1,5 +1,5 @@
 <template>
-  <div class="fullscreen-button" v-if="screenfullEnabled">
+  <div class="fullscreen-button" v-if="!isIE&&screenfullEnabled">
     <div class="fullscreen-icon" @click="toggleFullscreen">
       <span class="fa fa-arrows-alt" v-if="!isFullScreen"></span>
       <span class="fa fa-compress" v-else></span>
@@ -15,6 +15,7 @@ export default {
   data () {
     return {
       msg: 'this is from fullscreen-button.vue',
+      isIE: !!window.ActiveXObject || 'ActiveXObject' in window,
       screenfullEnabled: screenfull.enabled,
       isFullScreen: false
     }

@@ -2,7 +2,7 @@
   <div class="me">
     <el-dropdown class="me-dropdown" size="small">
       <span class="username">
-        我是谁我是谁
+        我是谁我是谁我是谁我是谁
       </span>
       <el-dropdown-menu class="me-dropdown-menu" slot="dropdown">
         <el-dropdown-item>
@@ -34,15 +34,17 @@ export default {
 
 <style lang='scss' scoped>
 .me {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   .me-dropdown {
-    max-width: 80px;
     text-align: center;
   }
   .username {
+    max-width: 84px;
+    display: inline-block;
+    vertical-align: middle;
     cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 </style>
