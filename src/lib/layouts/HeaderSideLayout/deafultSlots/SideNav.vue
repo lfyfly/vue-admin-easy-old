@@ -3,7 +3,7 @@
     <!-- <h3>{{msg}}</h3> -->
     <!-- <p>{{sideNav}}</p> -->
     <div class="template" v-for="(sideNav,groupIndex) in (navConfig[0].sideNav?navConfig:[{sideNav:navConfig}])" :key="sideNav.title" v-if="sideNavAcitveIndex===groupIndex">
-      <el-menu class="el-side-nav" :router="true"  :default-active="$route.path" :collapse="navCollapse">
+      <el-menu class="el-side-nav" :router="true" :default-active="$route.path" :collapse="navCollapse">
         <el-submenu v-for="(v,i) in sideNav.sideNav" :index="i+''" :key="v.title">
           <template v-if="v.title" slot="title">
             <i :class="v.icon"></i>
@@ -33,9 +33,17 @@ export default {
 }
 </script>
 <style lang='scss' >
-
-.side-nav .el-menu {
-  background: rgba(255, 255, 255, 0);
+.side-nav {
+  .el-menu {
+    background: rgba(255, 255, 255, 0);
+  }
+  .el-submenu__title:hover {
+    background-color: rgba(236, 245, 255, 0.7);
+  }
+  .el-menu-item:focus,
+  .el-menu-item:hover {
+    background-color: rgba(236, 245, 255, 0.7);
+  }
 }
 </style>
 

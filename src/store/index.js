@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
+import Promise from 'promise-polyfill'
+if (!window.Promise) {
+  window.Promise = Promise
+}
 Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {

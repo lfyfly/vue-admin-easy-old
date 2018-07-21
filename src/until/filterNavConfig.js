@@ -1,7 +1,7 @@
 
 let filterSideNav = function (sideNav, routers) {
   return sideNav.filter(routerGroup => {
-    routerGroup.children = routerGroup.children.filter(router => routers.includes(router.path))
+    routerGroup.children = routerGroup.children.filter(router => routers.indexOf(router.path) !== -1)
     return routerGroup.children.length !== 0
   })
 }

@@ -1,18 +1,20 @@
 <template>
   <div class="header-right">
-    <ul>
-      <li>aaaa</li>
-      <li>bbbb</li>
-      <li>cccc</li>
-      <li>eeee</li>
-      <li>dddd</li>
-    </ul>
+   <fullscreen-button/>
+   <me/>
   </div>
 </template>
 
 <script>
+import me from './headerRight/Me'
+import FullscreenButton from './headerRight/FullscreenButton'
+
 export default {
   name: 'header-right',
+  components: {
+    me,
+    FullscreenButton
+  },
   data () {
     return {
       msg: 'this is from header-right.vue'
@@ -22,15 +24,14 @@ export default {
 </script>
 <style lang='scss' scoped>
 @import "../config.scss";
-.header-right{
-  ul{
-    display: table;
-    height: $header-height;
-    &>*{
-      display: table-cell;
-      vertical-align: middle;
-      padding: 0 10px;
-    }
+.header-right {
+  display: table;
+  height: $header-height;
+  margin-right: 20px;
+  &>*{
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 10px;
   }
 }
 </style>

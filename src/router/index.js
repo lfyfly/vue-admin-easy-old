@@ -41,7 +41,7 @@ router.beforeEach(async (to, from, next) => {
     console.log(routers)
     // 1. 对路由进行过滤
     let filterRouterConfig = routerConfig.filter(router => {
-      return routers.includes(router.path)
+      return routers.indexOf(router.path) !== -1
     })
     // 2. 对menu进行过滤
     let filterNavConfig = until.filterNavConfig(navConfig, routers)
