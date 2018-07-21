@@ -4,7 +4,7 @@
       <div class="header-left-container">
         <div class="logo-container" :class="{collapse: navCollapse}">
           <logo />
-          <div class="logo-text" v-show="!navCollapse" >EASY</div>
+          <div class="logo-text" v-show="!navCollapse">EASY</div>
         </div>
         <div class="toggle-btn-container">
           <toggle-btn/>
@@ -20,9 +20,9 @@
     <el-scrollbar class="side-container">
       <side-nav/>
     </el-scrollbar>
-    <div class="page-container" :class="{collapse:navCollapse}">
+    <el-scrollbar class="page-container" :class="{collapse:navCollapse}">
       <slot>page-container</slot>
-    </div>
+    </el-scrollbar>
   </div>
 </template>
 
@@ -84,8 +84,8 @@ export default {
     top: 0;
     background: rgba(255, 255, 255, 0.9);
     border-bottom: 1px solid #e6e6e6;
-    box-sizing: border-box;
     height: $header-height;
+    box-sizing: border-box;
     .header-left-container {
       display: table;
       float: left;
@@ -103,14 +103,17 @@ export default {
   .side-container {
     top: $header-height;
     bottom: 0;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.9);
     position: fixed;
     border-right: solid 1px #e6e6e6;
+    box-sizing: border-box;
   }
   .page-container {
     margin-top: $header-height;
-    margin-left: $side-width;
-    transition: margin-left 0.3s;
+    margin-left: $side-width + 1px;
+    transition: margin-left .3s ease-in-out;
+    background: #fff;
+    height: calc(100vh - #{$header-height});
   }
   .page-container.collapse {
     margin-left: 65px;

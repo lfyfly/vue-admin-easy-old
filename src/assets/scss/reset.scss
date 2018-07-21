@@ -6,3 +6,8 @@
 a { color:#555; text-decoration:none; }
 
 li{list-style:none;}
+body{
+  background-attachment: fixed;
+  background: url(/static/img/wallpaper/wallpaper-1.jpg) no-repeat top left/cover fixed;
+}
+
