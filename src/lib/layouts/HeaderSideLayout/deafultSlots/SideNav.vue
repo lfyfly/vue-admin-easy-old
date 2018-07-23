@@ -48,7 +48,6 @@ export default {
 </style>
 
 <style lang='scss' scoped>
-@import "../config.scss";
 
 .el-side-nav {
   border-right: none;

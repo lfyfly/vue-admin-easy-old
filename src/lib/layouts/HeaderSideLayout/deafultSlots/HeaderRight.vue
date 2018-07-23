@@ -23,7 +23,6 @@ export default {
 }
 </script>
 <style lang='scss' scoped>
-@import "../config.scss";
 .header-right {
   display: table;
   height: $header-height;

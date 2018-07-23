@@ -4,8 +4,13 @@ $header-bg-color: rgba(255,255,255,.8);
 $header-color: #555;
 $header-color-active: orange;
 $header-bg-color-active: orange;
-$logo-short-url: 'static/img/short-logo.png';
-$logo-long-url: 'static/img/long-logo.png';
+$logo-url: '/static/img/logo.png';
+$logo-short-url: '/static/img/logo.png';
+$logo-long-url: '/static/img/logo.png';
+
+// user
+$default-avatar: '/static/img/default-avatar.png';
+
 // side
 $side-width: 200px;
 $side-background-color: rgba(255,255,255,.8);
@@ -16,3 +21,4 @@ $side-bg-color-active: orange;
 // page
 $page-bg-image: 'static/img/wallpaper-1.jpg';
 $page-bg-color: #fff;
+

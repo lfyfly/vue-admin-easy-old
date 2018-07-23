@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import config from '../config'
 require('es6-promise').polyfill()
 
 Vue.use(Vuex)
@@ -12,7 +13,8 @@ const store = new Vuex.Store({
     navConfig: null,
     headerNav: null,
     navCollapse: false,
-    msg: 'msg from vuex'
+    msg: 'msg from vuex',
+    config
   },
   mutations: {
     setLayout (state, playload) {

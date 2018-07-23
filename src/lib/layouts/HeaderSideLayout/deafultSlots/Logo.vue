@@ -14,7 +14,6 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-@import "../config.scss";
 .logo {
   width: $header-height * 0.5;
   height: $header-height * 0.5;

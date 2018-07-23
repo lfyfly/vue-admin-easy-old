@@ -1,9 +1,12 @@
 <template>
   <div class="me">
     <el-dropdown class="me-dropdown" size="small">
-      <span class="username">
-        我是谁我是谁我是谁我是谁
-      </span>
+      <div class="user-drop-container">
+        <div v-if="!config.avatar" class="username">
+          {{myInfo.username}}
+        </div>
+        <div v-else class="avatar" :style="{backgroundImage:`url(${myInfo.avatar})`}"></div>
+      </div>
       <el-dropdown-menu class="me-dropdown-menu" slot="dropdown">
         <el-dropdown-item>
           <router-link to="/logout">登出</router-link>
@@ -17,12 +20,16 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'me',
   data () {
     return {
       msg: 'this is from me.vue'
     }
+  },
+  computed: {
+    ...mapState(['config', 'myInfo'])
   }
 }
 </script>
@@ -37,14 +44,24 @@ export default {
   .me-dropdown {
     text-align: center;
   }
-  .username {
-    max-width: 84px;
+  .username,
+  .avatar {
     display: inline-block;
     vertical-align: middle;
     cursor: pointer;
+  }
+  .username {
+    max-width: 84px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+  .avatar {
+    $size: $header-height * 0.7;
+    height: $size;
+    width: $size;
+    background: #ccc url($default-avatar) center/contain;
+    border-radius: $size;
   }
 }
 </style>

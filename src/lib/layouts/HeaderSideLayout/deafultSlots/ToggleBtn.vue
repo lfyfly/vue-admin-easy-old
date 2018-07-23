@@ -20,7 +20,6 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-@import "../config.scss";
 
 .toggle-btn {
   cursor: pointer;

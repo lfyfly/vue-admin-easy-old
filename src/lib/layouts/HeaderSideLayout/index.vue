@@ -64,7 +64,6 @@ export default {
 </style>
 
 <style lang='scss' scoped>
-@import "./config.scss";
 
 .header-side-layout {
   .logo-container {
