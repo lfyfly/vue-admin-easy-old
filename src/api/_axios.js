@@ -1,11 +1,11 @@
 import axios from 'axios'
-
+import config from '@/config'
 // 添加请求拦截器
-axios.interceptors.request.use(config => {
+axios.interceptors.request.use(cfg => {
   // 在发送请求之前做些什么
   // config.headers['X-X'] = 'xyxxxxx'
-  if (localStorage.tocken) config.headers['tocken'] = localStorage.tocken
-  return config
+  if (localStorage[config.tockenKey]) cfg.headers[config.tockenKey] = localStorage[config.tockenKey]
+  return cfg
 }, function (error) {
   // 对请求错误做些什么
   return Promise.reject(error)

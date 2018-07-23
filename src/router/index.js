@@ -6,12 +6,13 @@ import navConfig from './navConfig'
 import until from '@/until'
 import store from '@/store'
 import api from '@/api'
+import config from '@/config'
 Vue.use(Router)
 const router = new Router({
   routes: guestRouter
 })
 router.beforeEach(async (to, from, next) => {
-  let tocken = localStorage.tocken
+  let tocken = localStorage[config.tockenKey]
 
   // 当前数组的属于哪个headerNav的组的item
   if (store.state.navConfig) {

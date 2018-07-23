@@ -12,7 +12,7 @@
           <router-link to="/personal">个人中心</router-link>
         </el-dropdown-item>
         <el-dropdown-item>
-          <router-link to="/logout">登出</router-link>
+          <span @click="logout" class="logout">登出</span>
         </el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import config from '@/config'
 import { mapState } from 'vuex'
 export default {
   name: 'me',
@@ -30,6 +31,12 @@ export default {
   },
   computed: {
     ...mapState(['config', 'myInfo'])
+  },
+  methods: {
+    logout () {
+      localStorage.removeItem(config.tockenKey)
+      window.location.reload()
+    }
   }
 }
 </script>
