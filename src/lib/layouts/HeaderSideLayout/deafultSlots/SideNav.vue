@@ -2,17 +2,24 @@
   <div class="side-nav" :class="{ collapse:navCollapse}">
     <!-- <h3>{{msg}}</h3> -->
     <!-- <p>{{sideNav}}</p> -->
+
     <div class="template" v-for="(sideNav,groupIndex) in (navConfig[0].sideNav?navConfig:[{sideNav:navConfig}])" :key="sideNav.title" v-if="sideNavAcitveIndex===groupIndex">
       <el-menu class="el-side-nav" :router="true" :default-active="$route.path" :collapse="navCollapse">
-        <el-submenu v-for="(v,i) in sideNav.sideNav" :index="i+''" :key="v.title">
-          <template v-if="v.title" slot="title">
+        <template v-for="(v,i) in sideNav.sideNav">
+          <el-menu-item v-if="v.children.length===1"  :class="{'is-active': $route.path === v.children[0].path}" :index="v.children[0].path" :key="v.title">
             <i :class="v.icon"></i>
-            <span>{{v.title}}</span>
-          </template>
-          <el-menu-item v-for="v2 in v.children" :key="v2.title" :index="v2.path">
-            {{v2.title}}
+            <span slot="title">{{v.children[0].title}}</span>
           </el-menu-item>
-        </el-submenu>
+          <el-submenu v-else :index="i+''" :key="v.title">
+            <template v-if="v.title" slot="title">
+              <i :class="v.icon"></i>
+              <span>{{v.title}}</span>
+            </template>
+            <el-menu-item v-for="v2 in v.children" :key="v2.title" :index="v2.path">
+              {{v2.title}}
+            </el-menu-item>
+          </el-submenu>
+        </template>
       </el-menu>
     </div>
   </div>

@@ -27,6 +27,13 @@ export default [
     // icon: 'el-icon-document',
     sideNav: [
       {
+        title: '首页',
+        icon: 'el-icon-tickets',
+        children: [
+          { title: '首页', path: '/index' }
+        ]
+      },
+      {
         title: 'a1',
         icon: 'el-icon-tickets',
         children: [

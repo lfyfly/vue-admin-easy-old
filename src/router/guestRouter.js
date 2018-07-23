@@ -1,22 +1,16 @@
 // 游客路由（未登录状态）
 export default [
-  {
-    path: '/',
-    redirect: { path: '/index' }
-  },
-  {
-    path: '/index',
-    component: () => import('@/pages/Index'),
-    meta: {
-      layout: 'HeaderSideLayout'
-    }
-  },
+
   {
     path: '/login',
     component: () => import('@/pages/Login'),
     meta: {
       layout: 'BlankLayout'
     }
+  },
+  {
+    path: '/',
+    redirect: { path: '/index' }
   },
   {
     path: '/register',

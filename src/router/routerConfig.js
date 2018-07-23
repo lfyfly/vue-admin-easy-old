@@ -12,6 +12,14 @@ export default [
       layout: 'HeaderSideLayout'
     }
   },
+
+  {
+    path: '/index',
+    component: () => import('@/pages/Index'),
+    meta: {
+      layout: 'HeaderSideLayout'
+    }
+  },
   {
     path: '/a1/1',
     component: Test,
