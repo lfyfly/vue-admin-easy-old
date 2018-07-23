@@ -1,12 +1,12 @@
 <template>
-  <div class="side-nav">
+  <div class="side-nav" :class="{ collapse:navCollapse}">
     <!-- <h3>{{msg}}</h3> -->
     <!-- <p>{{sideNav}}</p> -->
     <div class="template" v-for="(sideNav,groupIndex) in (navConfig[0].sideNav?navConfig:[{sideNav:navConfig}])" :key="sideNav.title" v-if="sideNavAcitveIndex===groupIndex">
       <el-menu class="el-side-nav" :router="true" :default-active="$route.path" :collapse="navCollapse">
         <el-submenu v-for="(v,i) in sideNav.sideNav" :index="i+''" :key="v.title">
           <template v-if="v.title" slot="title">
-            <i class="side-icon" :class="v.icon"></i>
+            <i :class="v.icon"></i>
             <span>{{v.title}}</span>
           </template>
           <el-menu-item v-for="v2 in v.children" :key="v2.title" :index="v2.path">
@@ -55,7 +55,7 @@ export default {
     background-color: $side-hover-color;
   }
 
-  .side-icon {
+  .el-submenu [class^="el-icon-"] {
     color: $side-icon-color;
   }
 }

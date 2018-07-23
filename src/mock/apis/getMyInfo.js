@@ -10,6 +10,6 @@ mock.onGet('/me').reply(function (config) {
     avatar: '/static/img/test-avartar.jpg',
     phone: '13011111111',
     role: 'admin',
-    routers: ['/a1/1', '/a1/2', '/a2/1', '/a2/2', '/b1/1', '/b1/2', '/b2/1']
+    routers: ['/personal', '/a1/1', '/a1/2', '/a2/1', '/a2/2', '/b1/1', '/b1/2', '/b2/1']
   }]
 })
