@@ -9,10 +9,10 @@
       </div>
       <el-dropdown-menu class="me-dropdown-menu" slot="dropdown">
         <el-dropdown-item>
-          <router-link to="/logout">登出</router-link>
+          <router-link to="/personal">个人中心</router-link>
         </el-dropdown-item>
         <el-dropdown-item>
-          <router-link to="/personal">个人中心</router-link>
+          <router-link to="/logout">登出</router-link>
         </el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
