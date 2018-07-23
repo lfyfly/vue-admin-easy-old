@@ -57,14 +57,18 @@ export default {
   }
 }
 </script>
-<style>
+<style lang='scss'>
 .el-scrollbar__wrap {
   overflow-x: hidden;
+}
+.my-header  {
+  *,a{
+    color: $header-color;
+  }
 }
 </style>
 
 <style lang='scss' scoped>
-
 .header-side-layout {
   .logo-container {
     width: $side-width;
@@ -84,10 +88,11 @@ export default {
     position: fixed;
     top: 0;
     z-index: 1;
-    background: rgba(255, 255, 255, 0.9);
+    background: $header-bg-color;
     border-bottom: 1px solid #e6e6e6;
     height: $header-height;
     box-sizing: border-box;
+
     .header-left-container {
       display: table;
       float: left;
@@ -105,7 +110,7 @@ export default {
   .side-container {
     top: $header-height;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.9);
+    background: $side-background-color;
     position: fixed;
     border-right: solid 1px #e6e6e6;
     box-sizing: border-box;
@@ -117,8 +122,7 @@ export default {
     transition: padding-left 0.3s ease-in-out;
     background: #fff;
     height: calc(100vh - #{$header-height});
-    background: url(/static/img/wallpaper/wallpaper-1.jpg) no-repeat top
-      left/cover fixed;
+    background: url($page-bg-image) no-repeat top left/cover fixed;
     &.collapse {
       padding-left: 65px;
     }

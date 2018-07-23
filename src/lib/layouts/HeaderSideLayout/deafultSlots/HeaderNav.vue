@@ -2,7 +2,7 @@
   <div class="header-nav">
     <ul>
       <li :class="{isActive:sideNavAcitveIndex===i}" v-for="(navItem,i) in headerNav" @click="toggleSideNav(i)" :key="navItem.title">
-        <router-link :to="navItem.path">{{navItem.title}}</router-link>
+        <router-link :to="navItem.path"><i :class="navItem.icon"></i> {{navItem.title}}</router-link>
       </li>
     </ul>
   </div>
@@ -34,8 +34,8 @@ export default {
     display: table;
     height: $header-height;
     li.isActive {
-      a {
-        color: #409eff;
+      i,a {
+        color: $header-color-active;
       }
     }
     & > * {

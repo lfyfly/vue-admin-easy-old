@@ -1,0 +1,20 @@
+// header
+$header-height: 60px !default;
+$header-bg-color: rgba(255, 255, 255, .9) !default;
+$header-color: #606266 !default;
+$header-color-active: #409eff !default;
+$logo-url: '/static/img/logo.png' !default;
+$logo-short-url: '/static/img/logo.png' !default;
+$logo-long-url: '/static/img/logo.png' !default;
+// user
+$default-avatar: '/static/img/default-avatar.png';
+// side
+$side-width: 200px !default;
+$side-background-color: $header-bg-color !default;
+$side-color: $header-color !default;
+$side-icon-color:$side-color !default;
+$side-color-active: $header-color-active !default;
+$side-hover-color:rgba(236, 245, 255, 0.7) !default;
+// page
+$page-bg-image: '/static/img/wallpaper/wallpaper-1.jpg' !default;
+$page-bg-color: #fff !default;

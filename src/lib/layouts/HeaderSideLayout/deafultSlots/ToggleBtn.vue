@@ -1,10 +1,10 @@
 <template>
-  <div class="toggle-btn" :class="{collapse: navCollapse}" @click="$store.commit('toggleNavCollapse')" >
+  <div class="toggle-btn" :class="{collapse: navCollapse}" @click="$store.commit('toggleNavCollapse')">
   </div>
 </template>
 
 <script>
-import {mapState} from 'vuex'
+import { mapState } from 'vuex'
 
 export default {
   name: 'toggle-btn',
@@ -20,21 +20,20 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-
 .toggle-btn {
   cursor: pointer;
   margin: 0 10px;
   $gap: 3px;
   $color: #c3c3c3;
   width: 18px;
-  color: $color;
-  background: $color;
+  color: $header-color;
+  background: $header-color;
   background-clip: content-box;
   height: $gap;
   padding: $gap 0;
   border-top: $gap solid;
   border-bottom: $gap solid;
-  transition: height .3s,padding .3s,border-width .3s;
+  transition: height 0.3s, padding 0.3s, border-width 0.3s;
   &.collapse {
     padding: $gap - 1px 0;
   }

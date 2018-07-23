@@ -66,7 +66,7 @@ exports.cssLoaders = function (options) {
       {
         loader: 'sass-resources-loader',
         options: {
-          resources: path.resolve(__dirname, '../src/config.scss')
+          resources: [path.resolve(__dirname, '../src/config-default.scss'),path.resolve(__dirname, '../src/config.scss')]
         }
       }
     ),

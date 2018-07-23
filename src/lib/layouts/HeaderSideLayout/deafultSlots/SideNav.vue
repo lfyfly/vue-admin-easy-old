@@ -6,7 +6,7 @@
       <el-menu class="el-side-nav" :router="true" :default-active="$route.path" :collapse="navCollapse">
         <el-submenu v-for="(v,i) in sideNav.sideNav" :index="i+''" :key="v.title">
           <template v-if="v.title" slot="title">
-            <i :class="v.icon"></i>
+            <i class="side-icon" :class="v.icon"></i>
             <span>{{v.title}}</span>
           </template>
           <el-menu-item v-for="v2 in v.children" :key="v2.title" :index="v2.path">
@@ -32,23 +32,36 @@ export default {
   }
 }
 </script>
-<style lang='scss' >
+<style lang='scss'>
+.el-side-nav .el-menu-item.is-active {
+  color: $header-color-active;
+}
+.el-side-nav .el-menu-item {
+  color: $side-color;
+}
+.el-side-nav .el-submenu__title {
+  color: $side-color;
+}
+</style>
+
+<style lang='scss'>
 .side-nav {
   .el-menu {
     background: rgba(255, 255, 255, 0);
   }
-  .el-submenu__title:hover {
-    background-color: rgba(236, 245, 255, 0.7);
-  }
+  .el-submenu__title:hover,
   .el-menu-item:focus,
   .el-menu-item:hover {
-    background-color: rgba(236, 245, 255, 0.7);
+    background-color: $side-hover-color;
+  }
+
+  .side-icon {
+    color: $side-icon-color;
   }
 }
 </style>
 
 <style lang='scss' scoped>
-
 .el-side-nav {
   border-right: none;
   &:not(.el-menu--collapse) {

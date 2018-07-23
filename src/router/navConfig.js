@@ -23,8 +23,8 @@
 // 分组导航
 export default [
   {
-    title: 'A',
-    icon: 'A',
+    title: 'AAA',
+    // icon: 'el-icon-document',
     sideNav: [
       {
         title: 'a1',
@@ -47,8 +47,8 @@ export default [
     ]
   },
   {
-    title: 'B',
-    icon: 'B',
+    title: 'BBB',
+    // icon: 'el-icon-document',
     sideNav: [
       {
         title: 'b1',
