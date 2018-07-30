@@ -3,8 +3,9 @@
     <div class="my-header">
       <div class="header-left-container">
         <div class="logo-container" :class="{collapse: navCollapse}">
-          <logo />
-          <div class="logo-text" v-show="!navCollapse">EASY</div>
+          <short-logo v-if="navCollapse" />
+          <long-logo v-else />
+
         </div>
         <div class="toggle-btn-container">
           <toggle-btn/>
@@ -32,7 +33,8 @@
 import HeaderRight from './deafultSlots/HeaderRight.vue'
 import HeaderNav from './deafultSlots/HeaderNav.vue'
 import SideNav from './deafultSlots/SideNav.vue'
-import Logo from './deafultSlots/Logo.vue'
+import LongLogo from './deafultSlots/LongLogo.vue'
+import ShortLogo from './deafultSlots/ShortLogo.vue'
 import ToggleBtn from './deafultSlots/ToggleBtn.vue'
 import { mapState } from 'vuex'
 export default {
@@ -41,7 +43,8 @@ export default {
     HeaderRight,
     HeaderNav,
     SideNav,
-    Logo,
+    LongLogo,
+    ShortLogo,
     ToggleBtn
   },
   data () {

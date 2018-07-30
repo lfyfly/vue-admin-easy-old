@@ -1,22 +1,22 @@
 <template>
-  <div class="logo" ></div>
+  <div class="short-logo" ></div>
 </template>
 <script>
 
 export default {
-  name: 'logo',
+  name: 'short-logo',
   data () {
     return {
-      msg: 'this is from logo.vue'
+      msg: 'this is from short-logo.vue'
     }
   }
 }
 </script>
 
 <style lang='scss' scoped>
-.logo {
+.short-logo {
   width: $header-height * 0.5;
   height: $header-height * 0.5;
-  background: url($logo-url) no-repeat center/contain;
+  background: url($short-logo-url) no-repeat center/contain;
 }
 </style>
