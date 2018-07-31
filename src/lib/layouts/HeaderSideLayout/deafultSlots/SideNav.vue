@@ -5,12 +5,12 @@
 
     <div class="template" v-for="(sideNav,groupIndex) in (navConfig[0].sideNav?navConfig:[{sideNav:navConfig}])" :key="sideNav.title" v-if="sideNavAcitveIndex===groupIndex">
       <el-menu class="el-side-nav" :router="true" :default-active="$route.path" :collapse="navCollapse">
-        <template v-for="(v,i) in sideNav.sideNav">
+        <template v-for="v in sideNav.sideNav">
           <el-menu-item v-if="v.children.length===1" :class="{'is-active': $route.path === v.children[0].path}" :index="v.children[0].path" :key="v.title">
             <i :class="v.icon" class="side-nav-icon"></i>
             <span slot="title">{{v.children[0].title}}</span>
           </el-menu-item>
-          <el-submenu v-else :index="i+''" :key="v.title">
+          <el-submenu v-else :index="v.title" :show-timeout="200" :hide-timeout="200" :key="v.title">
             <template v-if="v.title" slot="title">
               <i :class="v.icon"></i>
               <span>{{v.title}}</span>
