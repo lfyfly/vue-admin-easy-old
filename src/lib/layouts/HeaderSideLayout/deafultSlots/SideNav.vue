@@ -12,7 +12,7 @@
           </el-menu-item>
           <el-submenu v-else :index="v.title" :show-timeout="200" :hide-timeout="200" :key="v.title">
             <template v-if="v.title" slot="title">
-              <i :class="v.icon"></i>
+              <i :class="v.icon" class="side-nav-icon"></i>
               <span>{{v.title}}</span>
             </template>
             <el-menu-item v-for="v2 in v.children" :key="v2.title" :index="v2.path">

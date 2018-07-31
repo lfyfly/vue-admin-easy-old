@@ -59,7 +59,7 @@ export default [
     sideNav: [
       {
         title: 'b1',
-        icon: 'el-icon-tickets',
+        icon: 'fa fa-superpowers',
         children: [
           { title: 'b1-1', path: '/b1/1' },
           { title: 'b1-2', path: '/b1/2' },
