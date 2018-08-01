@@ -1,5 +1,5 @@
-import getMyInfo from './getMyInfo'
+import personal from './personal'
 
 export default {
-  getMyInfo
+  personal
 }

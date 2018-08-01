@@ -5,6 +5,7 @@ mock.onGet('/me').reply(function (config) {
   // axios config
   // console.log(config.params, config.headers)
   return [200, {
+    id: 89757,
     email: '123@qq.com',
     username: 'lfy',
     avatar: '/static/img/test-avartar.jpg',
