@@ -1,5 +1,5 @@
 <template>
-  <div class="update-form">
+  <div class="my-form">
     <el-form ref="form" :model="form.formData" label-width="80px">
       <component v-for="formItem in form.formItems" :is="formItem.component" :formData="form.formData" :formItem="formItem" :key="formItem.name"></component>
       <el-form-item>
@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: 'update-form',
+  name: 'my-form',
   props: {
     form: {
       type: Object
@@ -20,7 +20,7 @@ export default {
   },
   data () {
     return {
-      msg: 'this is from update-form.vue'
+      msg: 'this is from my-form.vue'
     }
   },
   methods: {
@@ -39,6 +39,6 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-.update-form {
+.my-form {
 }
 </style>
