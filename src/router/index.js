@@ -37,10 +37,8 @@ router.beforeEach(async (to, from, next) => {
       next('/')
       return
     }
-    await api.personal.get({}, true).then(res => {
-      console.log('router get me', res)
-      store.commit('setMyInfo', res.data)
-    })
+    await api.personal.get()
+
     let routers = store.state.myInfo && store.state.myInfo.routers
     console.log(routers)
     // 1. 对路由进行过滤

@@ -8,12 +8,12 @@
         <div v-else class="avatar" :style="{backgroundImage:`url(${myInfo.avatar})`}"></div>
       </div>
       <el-dropdown-menu class="me-dropdown-menu" slot="dropdown">
-        <el-dropdown-item>
-          <router-link to="/personal">个人中心</router-link>
-        </el-dropdown-item>
-        <el-dropdown-item>
-          <span @click="logout" class="logout">登出</span>
-        </el-dropdown-item>
+        <router-link to="/personal">
+          <el-dropdown-item>个人中心</el-dropdown-item>
+        </router-link>
+        <div @click="logout" class="logout">
+          <el-dropdown-item>登出</el-dropdown-item>
+        </div>
       </el-dropdown-menu>
     </el-dropdown>
   </div>
