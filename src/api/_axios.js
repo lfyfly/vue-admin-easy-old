@@ -8,6 +8,7 @@ axios.interceptors.request.use(cfg => {
   return cfg
 }, function (error) {
   // 对请求错误做些什么
+  alert('请求错误\n' + error)
   return Promise.reject(error)
 })
 

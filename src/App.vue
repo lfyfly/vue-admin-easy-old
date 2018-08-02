@@ -17,9 +17,6 @@ export default {
   components: {
     BlankLayout,
     HeaderSideLayout
-  },
-  methods: {
-
   }
 }
 </script>

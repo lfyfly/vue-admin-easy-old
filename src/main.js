@@ -8,15 +8,12 @@ import ElementUI from 'element-ui'
 import 'font-awesome/css/font-awesome.css'
 import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/scss/reset.scss'
-import formItems from '@/pages/_formItems'
-import MyForm from '@/pages/_components/MyForm'
+import BasicForm from '@/pages/_components/form/basic-form'
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.prototype.$BUS = new Vue()
-Object.keys(formItems).forEach(componentName => {
-  Vue.component(componentName, formItems[componentName])
-})
-Vue.component('my-form', MyForm)
+
+Vue.component('basic-form', BasicForm)
 
 if (process.env.NODE_ENV === 'development') require('@/mock')
 /* eslint-disable no-new */

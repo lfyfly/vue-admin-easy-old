@@ -12,18 +12,30 @@
         </span>
       </div>
     </div>
-
+    <div class="personal-row">
+      <div class="left">密码</div>
+      <div class="right">
+        <i class="el-icon-edit" @click="modifyPassword"></i>
+      </div>
+    </div>
     <el-dialog v-if="dialogForm.show" :title="dialogForm.title" :visible.sync="dialogForm.show" width="40%">
-      <my-form :form="dialogForm.form" @submit="submit" @cancel="cancel" />
+      <component :is="dialogForm.formComponent" :form="dialogForm.form" @submit="submit" @cancel="cancel" />
     </el-dialog>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
-
+import modifyPhoneForm from '@/pages/_components/form/modify-phone-form'
+import modifyEmailForm from '@/pages/_components/form/modify-email-form'
+import modifyPasswordForm from '@/pages/_components/form/modify-password-form'
 export default {
   name: 'personal',
+  components: {
+    modifyPhoneForm,
+    modifyEmailForm,
+    modifyPasswordForm
+  },
   data () {
     return {
       msg: 'this is from personal.vue',
@@ -31,6 +43,7 @@ export default {
         title: 'dialog 标题',
         show: false,
         optionType: 'update', // ''
+        formComponent: 'basic-form',
         form: {} // 表单所需数据
       },
       formItems: [
@@ -46,6 +59,7 @@ export default {
         {
           component: 'base-input',
           name: 'email',
+          needCaptcha: true,
           label: '邮箱',
           scenes: ['display', 'edit'],
           rules: [
@@ -56,24 +70,12 @@ export default {
           component: 'base-input',
           name: 'phone',
           label: '手机',
-          scenes: ['display', 'edit'],
-          rules: [
-            { required: true, message: '请输入活动名称', trigger: 'blur' }
-          ]
+          scenes: ['display', 'edit']
         },
         {
           name: 'role',
           label: '权限',
           scenes: ['display']
-        },
-        {
-          component: 'base-input',
-          name: 'password',
-          label: '密码',
-          scenes: ['edit'],
-          rules: [
-            { required: true, message: '请输入活动名称', trigger: 'blur' }
-          ]
         }
       ]
     }
@@ -83,15 +85,33 @@ export default {
   },
   methods: {
     edit (name) {
-      let form = {
-        scenes: 'edit',
-        formData: { id: this.myInfo.id, [name]: this.myInfo[name] },
-        formItems: [this.formItems.filter(formItem => formItem.name === name)[0]]
+      // let form = {
+      //   scenes: 'edit',
+      //   formData: { id: this.myInfo.id, [name]: this.myInfo[name] },
+      //   formItems: this.formItems.filter(formItem => formItem.name === name)
+      // }
+      // console.log('待编辑数据', form.formData)
+      if (name === 'phone') {
+        this.dialogForm.formComponent = 'modify-phone-form'
+        this.dialogForm.title = '修改手机'
+        this.dialogForm.form = { phone: this.myInfo[name] }
+        this.dialogForm.show = true
+      } else if (name === 'email') {
+        this.dialogForm.formComponent = 'modify-email-form'
+        this.dialogForm.form = { email: this.myInfo[name] }
+        this.dialogForm.title = '修改邮箱'
+        this.dialogForm.show = true
+      } else {
+        this.dialogForm.formComponent = 'basic-form'
       }
-      console.log('待编辑数据', form.formData)
-      this.dialogForm.title = '修改' + form.formItems[0].label
+      // this.dialogForm.title = '修改' + form.formItems[0].label
+      // this.dialogForm.show = true
+      // this.dialogForm.form = form
+    },
+    modifyPassword () {
+      this.dialogForm.formComponent = 'modify-password-form'
       this.dialogForm.show = true
-      this.dialogForm.form = form
+      this.dialogForm.title = '修改密码'
     },
     cancel () {
       this.dialogForm.show = false

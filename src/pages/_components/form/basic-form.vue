@@ -1,6 +1,6 @@
 <template>
-  <div class="my-form">
-    <el-form ref="form" :model="form.formData" label-width="80px">
+  <div class="basic-form">
+    <el-form ref="basicForm" :model="form.formData" label-width="80px">
       <component v-for="formItem in form.formItems" :is="formItem.component" :formData="form.formData" :formItem="formItem" :key="formItem.name"></component>
       <el-form-item>
         <el-button type="primary" @click="onSubmit">确定</el-button>
@@ -11,8 +11,12 @@
 </template>
 
 <script>
+import formItems from '@/pages/_formItems'
 export default {
-  name: 'my-form',
+  name: 'basic-form',
+  components: {
+    ...formItems
+  },
   props: {
     form: {
       type: Object
@@ -20,12 +24,12 @@ export default {
   },
   data () {
     return {
-      msg: 'this is from my-form.vue'
+      msg: 'this is from basic-form.vue'
     }
   },
   methods: {
     onSubmit () {
-      this.$refs.form.validate((valid) => {
+      this.$refs.basicForm.validate((valid) => {
         if (valid) {
           this.$emit('submit', this.form.formData)
         } else {
@@ -39,6 +43,6 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-.my-form {
+.basic-form {
 }
 </style>
