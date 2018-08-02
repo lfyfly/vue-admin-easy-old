@@ -17,7 +17,7 @@ axios.interceptors.response.use(response => {
   return response
 }, (error, res) => {
   // 对响应错误统一做提示、
-
+  alert(error)
   return Promise.reject(error)
 })
 
