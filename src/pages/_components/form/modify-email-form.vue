@@ -73,8 +73,9 @@ export default {
     step1Submit () {
       this.$refs.step1.validate((valid) => {
         if (valid) {
-          this.$emit('submit', this.step_1_data)
-          this.step = 2
+          api.personal.validateEmailCaptcha().then(res => {
+            this.step = 2
+          })
         } else {
           console.log('error submit!!')
           return false
