@@ -40,7 +40,7 @@ router.beforeEach(async (to, from, next) => {
     await api.personal.get()
 
     let routers = store.state.myInfo && store.state.myInfo.routers
-    console.log(routers)
+    console.log('用户权限路由', routers)
     // 1. 对路由进行过滤
     let filterRouterConfig = routerConfig.filter(router => {
       return routers.indexOf(router.path) !== -1

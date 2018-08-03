@@ -1,5 +1,5 @@
 import mock from '../mock'
-import mockjs from 'mockjs'
+import mockjs from 'C:/Users/jc/AppData/Local/Microsoft/TypeScript/2.9/node_modules/@types/mockjs'
 mock
   .onGet('/users').reply(200, mockjs.mock({
     'total': 1000,

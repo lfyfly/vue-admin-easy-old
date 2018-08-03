@@ -1,5 +1,5 @@
 export default function (currPath, navConfig) {
-  console.log('getNavGroupActiveIndex')
+  // console.log('getNavGroupActiveIndex')
   let index = 0
   let hasheaderNav = navConfig[0].sideNav
   if (hasheaderNav) {

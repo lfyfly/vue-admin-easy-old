@@ -56,7 +56,7 @@ export default {
     ...mapState(['navCollapse', 'navConfig'])
   },
   created () {
-    console.log('HeaderSideLayout')
+    // console.log('HeaderSideLayout')
   }
 }
 </script>

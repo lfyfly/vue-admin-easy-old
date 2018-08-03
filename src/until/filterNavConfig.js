@@ -20,7 +20,7 @@ export default function (navConfig, routers) {
         path: headerNavItem.sideNav[0].children[0].path
       })
     })
-    console.log(headerNav, 'headerNav')
+    console.log('headerNav', headerNav)
   } else {
     navConfig = filterSideNav(navConfig, routers)
   }

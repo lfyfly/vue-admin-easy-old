@@ -1,6 +1,8 @@
 <template>
   <div class="basic-form">
+
     <el-form ref="basicForm" :model="form.formData" label-width="80px">
+
       <component v-for="formItem in form.formItems" :is="formItem.component" :formData="form.formData" :formItem="formItem" :key="formItem.name"></component>
       <el-form-item>
         <el-button type="primary" @click="onSubmit">确定</el-button>
@@ -19,13 +21,17 @@ export default {
   },
   props: {
     form: {
-      type: Object
+      type: Object,
+      required: true
     }
   },
   data () {
     return {
       msg: 'this is from basic-form.vue'
     }
+  },
+  mounted () {
+    console.log('this.form', this.form)
   },
   methods: {
     onSubmit () {

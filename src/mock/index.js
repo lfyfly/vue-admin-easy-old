@@ -1,2 +1,1 @@
-import './apis/getMyInfo'
-import './apis/users'
+import './api/personal'

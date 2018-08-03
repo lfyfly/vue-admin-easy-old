@@ -40,14 +40,10 @@
 </template>
 
 <script>
-import formItems from '@/pages/_formItems'
 import validators from '@/pages/_validators'
 import api from '@/api'
 export default {
   name: 'modify-email-form',
-  components: {
-    ...formItems
-  },
   props: {
     form: {
       type: Object,

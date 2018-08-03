@@ -9,7 +9,7 @@ export default {
     })
   },
   put (params) {
-    return _axios.put('/me', ...params)
+    return _axios.put('/me', params)
   },
   // 修改手机
   getPhoneCaptcha () {
