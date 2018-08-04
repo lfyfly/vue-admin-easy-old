@@ -3,7 +3,10 @@ export default {
   reqLog (config) {
     if (!isDev) return
     console.log(`【请求发送】【${config.method}】 ${config.url}`)
-    if (config.data) console.table(config.data)
+    if (config.data) {
+      console.log('【请求数据】')
+      console.table(JSON.parse(config.data))
+    }
     // console.table(config.headers)
   },
   resLog (config, response) {

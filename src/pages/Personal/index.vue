@@ -100,7 +100,7 @@ export default {
       } else {
         this.dialogForm.formComponent = 'basic-form'
         let formItems = this.formItems.filter(formItem => formItem.name === name)
-        console.log('formItems:', formItems)
+        // console.log('formItems:', formItems)
         this.dialogForm.title = '修改' + formItems[0].label
         this.dialogForm.form = {
           formData: { id: this.myInfo.id, [name]: this.myInfo[name] },
@@ -119,8 +119,7 @@ export default {
     },
     submit (params) {
       // api(更新请求+刷新请求)
-      api.personal.put(params)
-      console.log('请求数据', params)
+      api.personal.put(params).then(this.cancel)
     }
   }
 }

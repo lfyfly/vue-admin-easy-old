@@ -30,9 +30,6 @@ export default {
       msg: 'this is from basic-form.vue'
     }
   },
-  mounted () {
-    console.log('this.form', this.form)
-  },
   methods: {
     onSubmit () {
       this.$refs.basicForm.validate((valid) => {

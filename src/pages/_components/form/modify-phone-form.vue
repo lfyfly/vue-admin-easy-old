@@ -75,7 +75,7 @@ export default {
     step1Submit () {
       this.$refs.step1.validate((valid) => {
         if (valid) {
-          api.personal.validatePhoneCaptcha().then(res => {
+          api.personal.validatePhoneCaptcha(this.step_1_data).then(res => {
             this.step = 2
           })
         } else {
@@ -87,7 +87,7 @@ export default {
     step2Submit () {
       this.$refs.step2.validate((valid) => {
         if (valid) {
-          this.$emit('submit', this.step_2_data)
+          api.personal.modifyPhone(this.step_2_data)
           this.step = 3
         } else {
           console.log('error submit!!')

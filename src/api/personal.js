@@ -2,14 +2,19 @@ import _axios from './_axios'
 import store from '@/store'
 export default {
   get (params, ignore) {
-    return _axios.get('/me').then(res => {
-      if (ignore) return res
-      store.commit('setMyInfo', res.data)
-      return res
-    })
+    return _axios.get('/me')
+      .then(res => {
+        if (ignore) return res
+        store.commit('setMyInfo', res.data)
+        return res
+      })
   },
   put (params) {
     return _axios.put('/me', params)
+      .then(res => {
+        // 更新用户信息
+        this.get()
+      })
   },
   // 修改手机
   getPhoneCaptcha () {
@@ -23,7 +28,7 @@ export default {
   },
   // 修改邮箱
   getEmailCaptcha () {
-    return _axios.get('/getPhoneCaptcha')
+    return _axios.get('/getEmailCaptcha')
   },
   validateEmailCaptcha (params) {
     return _axios.post('/validatePhoneCaptcha', params)
@@ -33,6 +38,6 @@ export default {
   },
   // 修改密码
   modifyPassword (params) {
-    return _axios.post('/modifyPassword', params)
+    return _axios.put('/modifyPassword', params)
   }
 }
