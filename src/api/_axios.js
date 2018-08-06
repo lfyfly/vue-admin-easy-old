@@ -22,10 +22,11 @@ axios.interceptors.request.use(cfg => {
 // 添加响应拦截器
 axios.interceptors.response.use(response => {
   // 对响应数据做点什么
-  console.log(response)
+  // 统一对响应数据中的message进行提醒
   if (response.data && response.data.message) {
     Message({
-      type: 'success',
+      type: response.data.type || 'success',
+      showClose: true,
       message: response.data.message
     })
   }
@@ -33,6 +34,7 @@ axios.interceptors.response.use(response => {
   return response
 }, (error) => {
   // 对响应错误统一做提示，后端需要定义好 error message
+  // TODO 错误上报
   Message({
     type: 'error',
     message: error.message

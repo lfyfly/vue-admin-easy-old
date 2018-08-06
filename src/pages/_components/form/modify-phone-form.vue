@@ -13,7 +13,7 @@
         <el-input spellcheck="false" v-model="step_1_data.phoneCaptcha"></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button @click="getCaptcha">发送验证码</el-button>
+        <el-button @click="getCaptcha">{{sendCaptchaBtnText}}</el-button>
         <el-button type="primary" @click="step1Submit">下一步</el-button>
       </el-form-item>
     </el-form>
@@ -26,6 +26,7 @@
         <el-input spellcheck="false" v-model="step_2_data.phoneCaptcha"></el-input>
       </el-form-item>
       <el-form-item>
+        <el-button  @click="getCaptcha(2)">{{sendCaptchaBtnText}}</el-button>
         <el-button type="primary" @click="step2Submit">确定</el-button>
       </el-form-item>
     </el-form>
@@ -65,18 +66,52 @@ export default {
       phoneRules: [
         { required: true, message: '手机号不能为空', trigger: 'blur' },
         { validator: validators.isPhone, trigger: 'blur' }
-      ]
+      ],
+      sendCaptchaBtnText: '发送验证码',
+      count: 60, // 验证码发送间隔，用于重置（单位：秒）
+      currCount: 60, // 剩余可发送秒数（单位：秒）
+      countDownTimer: null
     }
   },
   methods: {
-    getCaptcha () {
+    getCaptcha (step) {
+      // 第二步且手机有效
+      let phoneIsValid
+      if (step === 2) {
+        this.$refs.step2.validateField('phone', function (err) {
+          phoneIsValid = !(err.length > 0)
+        })
+      }
+      if (phoneIsValid === false) return
+      if (this.countDownTimer !== null) return
       api.personal.getPhoneCaptcha()
+      this.countDown()
+      this.countDownTimer = setInterval(this.countDown, 1000)
+    },
+    resetCountDown () {
+      this.sendCaptchaBtnText = '发送验证码'
+      clearInterval(this.countDownTimer)
+      this.countDownTimer = null
+      this.currCount = this.count
+    },
+    countDown () {
+      console.log('定时器')
+      this.currCount--
+      if (this.currCount === 0) {
+        this.resetCountDown()
+        return
+      }
+      this.sendCaptchaBtnText = this.currCount + '秒后可重新发送'
     },
     step1Submit () {
       this.$refs.step1.validate((valid) => {
         if (valid) {
           api.personal.validatePhoneCaptcha(this.step_1_data).then(res => {
-            this.step = 2
+            console.log('res.data', res)
+            if (res.data.type === 'success') {
+              this.step = 2
+              this.resetCountDown()
+            }
           })
         } else {
           console.log('error submit!!')
@@ -87,14 +122,21 @@ export default {
     step2Submit () {
       this.$refs.step2.validate((valid) => {
         if (valid) {
-          api.personal.modifyPhone(this.step_2_data)
-          this.step = 3
+          api.personal.modifyPhone(this.step_2_data).then(res => {
+            if (res.data.type === 'success') {
+              this.resetCountDown()
+              this.step = 3
+            }
+          })
         } else {
           console.log('error submit!!')
           return false
         }
       })
     }
+  },
+  destroyed () {
+    this.resetCountDown()
   }
 }
 </script>
