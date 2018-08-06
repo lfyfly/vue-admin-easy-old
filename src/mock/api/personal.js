@@ -10,7 +10,7 @@ mock.onGet('/me').reply(function (cfg) {
 
 mock.onPut('/me').reply(function (cfg) {
   let params = JSON.parse(cfg.data)
-  let tocken = cfg.headers[cfg.tockenKey]
+  let tocken = cfg.headers[config.tockenKey]
   db.put('users', { id: tocken }, params)
   // axios config
   return [200, {
