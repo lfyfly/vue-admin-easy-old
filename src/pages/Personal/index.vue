@@ -46,7 +46,6 @@ export default {
       dialogForm: {
         title: 'dialog 标题',
         show: false,
-        optionType: 'update', // ''
         formComponent: 'basic-form',
         form: {} // 表单所需数据
       },

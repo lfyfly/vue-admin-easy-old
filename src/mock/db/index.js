@@ -16,6 +16,8 @@ if (localStorage.tables) {
 export default {
   find (tableName, condition) {
     let table = this.tables[tableName]
+    if (!condition) return table
+
     return table.filter(item => {
       return Object.keys(condition).every(key => {
         return condition[key] === item[key]

@@ -34,6 +34,13 @@ export default [
         ]
       },
       {
+        title: '用户管理',
+        icon: 'el-icon-tickets',
+        children: [
+          { title: '用户表', path: '/users' }
+        ]
+      },
+      {
         title: 'a1',
         icon: 'el-icon-tickets',
         children: [
