@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'base-input',
+  name: 'basic-input',
   props: {
     formData: {
       type: Object,
@@ -18,13 +18,13 @@ export default {
   },
   data () {
     return {
-      msg: 'this is from base-input.vue'
+      msg: 'this is from basic-input.vue'
     }
   }
 }
 </script>
 
 <style lang='scss' scoped>
-.base-input {
+.basic-input {
 }
 </style>

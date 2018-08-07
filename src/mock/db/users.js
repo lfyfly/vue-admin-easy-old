@@ -7,6 +7,7 @@ export default [
     phone: '13011111111',
     role: 'admin',
     password: '111111',
+    state: 0,
     routers: ['/index', '/users', '/personal', '/a1/1', '/a1/2', '/a2/1', '/a2/2', '/b1/1', '/b1/2', '/b2/1']
   },
   {
@@ -17,16 +18,18 @@ export default [
     phone: '13022222222',
     role: 'admin',
     password: '111111',
+    state: 0,
     routers: ['/index', '/users', '/personal', '/a1/1', '/a1/2', '/a2/1', '/a2/2', '/b1/1', '/b1/2', '/b2/1']
   },
   {
-    id: '3',
+    id: '2',
     email: '3@qq.com',
     username: 'ccc',
     avatar: '/static/img/test-avartar.jpg',
     phone: '13033333333',
     role: 'admin',
     password: '111111',
+    state: 0,
     routers: ['/index', '/users', '/personal', '/a1/1', '/a1/2', '/a2/1', '/a2/2', '/b1/1', '/b1/2', '/b2/1']
   }
 ]

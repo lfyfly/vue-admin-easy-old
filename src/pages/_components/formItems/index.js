@@ -1,9 +1,7 @@
-import BaseInput from './input/base-input'
-import CaptchaInput from './input/captcha-input'
-import PhoneInput from './input/phone-input'
+import basicInput from './input/basic-input'
+import easySelect from './input/easy-select'
 
 export default{
-  BaseInput,
-  CaptchaInput,
-  PhoneInput
+  basicInput,
+  easySelect
 }

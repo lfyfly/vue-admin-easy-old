@@ -51,19 +51,21 @@ export default {
       },
       formItems: [
         {
-          component: 'base-input',
           name: 'username',
           label: '昵称',
           scenes: ['display', 'edit'],
           rules: [
-            { required: true, message: '昵称不能为空', trigger: 'blur' }
+            { required: true, message: '昵称不能为空', trigger: 'blur' },
+            { max: 16, message: '昵称长度不能超过16个字符', trigger: 'blur' }
           ]
         },
         {
-          component: 'base-input',
           name: 'sign',
           label: '签名',
-          scenes: ['display', 'edit']
+          scenes: ['display', 'edit'],
+          rules: [
+            { max: 200, message: '签名长度不能超过200个字符', trigger: 'blur' }
+          ]
         },
         {
           name: 'email',

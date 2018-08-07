@@ -61,11 +61,15 @@ export default {
 }
 </script>
 <style lang='scss'>
-.el-scrollbar__wrap {
-  overflow-x: hidden;
+.side-container,
+.page-scroll-container {
+  & > .el-scrollbar__wrap {
+    overflow-x: hidden;
+  }
 }
-.my-header  {
-  *,a{
+.my-header {
+  *,
+  a {
     color: $header-color;
   }
 }

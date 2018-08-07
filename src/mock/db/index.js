@@ -27,7 +27,9 @@ export default {
   get (tableName, condition) {
     return this.find(tableName, condition)
   },
-  post () {
+  post (tableName, newData, defaultData = {}) {
+    let table = this.tables[tableName]
+    table.unshift({...defaultData, ...newData})
     this.save()
   },
   put (tableName, condition, updateData) {
