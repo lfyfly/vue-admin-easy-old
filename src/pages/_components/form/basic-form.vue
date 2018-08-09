@@ -31,6 +31,7 @@ export default {
   computed: {
     _formItems () {
       return this.form.formItems.filter(formItem => {
+        if (!formItem.options) return true
         return formItem.options.indexOf(this.form.option) !== -1
       })
     }
