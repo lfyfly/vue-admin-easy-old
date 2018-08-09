@@ -61,10 +61,17 @@ export default {
               name: 'username',
               label: '昵称',
               options: ['edit', 'create'],
+              placeholder: '请输入昵称',
               rules: [
                 { required: true, message: '昵称不能为空', trigger: 'blur' },
                 { max: 16, message: '昵称长度不能超过16个字符', trigger: 'blur' }
               ]
+
+              // disabled: true // edit 和 create状态下都会被禁用，如果只要禁用其中一个，看下面四个属性
+              // 以下四个属性使用情景：当编辑状态与创建状态表单的 readonly 或 disable 状态不同时
+              // create_readonly: true, // 或 edit_readonly: true
+              // create_disabled: true // 或 edit_disabled: true
+
             },
             {
               name: 'sign',
@@ -77,6 +84,7 @@ export default {
             {
               name: 'email',
               label: '邮箱',
+              placeholder: '请输入邮箱',
               options: ['edit', 'create'],
               rules: [
                 { required: true, message: '邮箱不能为空', trigger: 'blur' },
@@ -86,6 +94,7 @@ export default {
             {
               name: 'phone',
               label: '手机',
+              placeholder: '请输入手机',
               options: ['edit', 'create'],
               rules: [
                 { required: true, message: '手机不能为空', trigger: 'blur' },
@@ -101,8 +110,8 @@ export default {
                 { value: 'admin' },
                 { value: 'user' },
                 { value: 'guest' }
-              ]
-              // readonly: true,
+              ],
+              edit_disabled: true
             }
           ]
         } // 表单所需数据
@@ -133,7 +142,7 @@ export default {
       this.dialogForm.title = '新增'
       this.dialogForm.form.option = 'create'
       this.dialogForm.show = true
-      this.dialogForm.form.formData = {role: 'user'}
+      this.dialogForm.form.formData = { role: 'user' }
     },
     del (row) {
       if (confirm('确认删除')) {

@@ -1,7 +1,7 @@
 <template>
   <div class="basic-form">
     <el-form ref="basicForm" :model="form.formData" label-width="80px">
-      <component v-for="formItem in _formItems" :is="formItem.component||'basic-input'" :formData="form.formData" :formItem="formItem" :key="formItem.name"></component>
+      <component v-for="formItem in _formItems" :is="formItem.component||'basic-input'" :option="form.option" :formData="form.formData" :formItem="formItem" :key="formItem.name"></component>
       <el-form-item>
         <el-button type="primary" @click="onSubmit">确定</el-button>
         <el-button @click="$emit('cancel')">取消</el-button>
