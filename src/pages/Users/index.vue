@@ -74,7 +74,6 @@ export default {
               ]
             },
             {
-
               name: 'email',
               label: '邮箱',
               edit: true,
@@ -136,9 +135,11 @@ export default {
       this.dialogForm.form.formData = {role: 'user'}
     },
     del (row) {
-      row.state = -1
-      api.users.put(row)
-      this.getTableData()
+      if (confirm('确认删除')) {
+        row.state = -1
+        api.users.put(row)
+        this.getTableData()
+      }
     },
     submit () {
       alert(JSON.stringify(this.dialogForm.form.formData))

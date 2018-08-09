@@ -3,7 +3,6 @@
     <component :is="$route.meta.layout">
       <router-view/>
     </component>
-
   </div>
 
 </template>
