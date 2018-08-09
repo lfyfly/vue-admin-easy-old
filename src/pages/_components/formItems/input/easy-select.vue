@@ -1,7 +1,7 @@
 <template>
   <el-form-item :rules="formItem.rules" :prop="formItem.name" :label="formItem.label">
     <el-select v-model="formData[formItem.name]" placeholder="请选择">
-      <el-option v-for="item in formItem.options" :key="item.value" :label="item.label" :value="item.value">
+      <el-option v-for="item in formItem.componentData" :key="item.value" :label="item.label" :value="item.value">
       </el-option>
     </el-select>
   </el-form-item>

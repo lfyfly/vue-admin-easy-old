@@ -36,13 +36,13 @@
 </template>
 
 <script>
-import BasicForm from '@/pages/_components/form/basic-form'
+import basicForm from '@/pages/_components/form/basic-form'
 import validators from '@/pages/_validators'
 import api from '@/api'
 export default {
   name: 'users',
   components: {
-    BasicForm
+    basicForm
   },
   data () {
     return {
@@ -54,12 +54,13 @@ export default {
         show: false,
         formComponent: 'basic-form',
         form: {
+          option: '', // 'edit' | 'create'
           formData: {},
           formItems: [
             {
               name: 'username',
               label: '昵称',
-              edit: true,
+              options: ['edit', 'create'],
               rules: [
                 { required: true, message: '昵称不能为空', trigger: 'blur' },
                 { max: 16, message: '昵称长度不能超过16个字符', trigger: 'blur' }
@@ -68,7 +69,7 @@ export default {
             {
               name: 'sign',
               label: '签名',
-              edit: true,
+              options: ['edit'],
               rules: [
                 { max: 200, message: '昵称长度不能超过200个字符', trigger: 'blur' }
               ]
@@ -76,8 +77,7 @@ export default {
             {
               name: 'email',
               label: '邮箱',
-              edit: true,
-              create: true,
+              options: ['edit', 'create'],
               rules: [
                 { required: true, message: '邮箱不能为空', trigger: 'blur' },
                 { type: 'email', message: '邮箱格式错误', trigger: 'blur' }
@@ -86,8 +86,7 @@ export default {
             {
               name: 'phone',
               label: '手机',
-              edit: true,
-              create: true,
+              options: ['edit', 'create'],
               rules: [
                 { required: true, message: '手机不能为空', trigger: 'blur' },
                 { validator: validators.isPhone, trigger: 'blur' }
@@ -95,11 +94,10 @@ export default {
             },
             {
               name: 'role',
-              edit: true,
-              create: true,
+              options: ['edit', 'create'],
               label: '权限',
               component: 'easy-select',
-              options: [
+              componentData: [
                 { value: 'admin' },
                 { value: 'user' },
                 { value: 'guest' }
@@ -114,6 +112,7 @@ export default {
     }
   },
   methods: {
+    // 过滤出可编辑，或可创建字段
     getTableData () {
       api.users.get().then(res => {
         console.log(res.data.data)
@@ -126,11 +125,13 @@ export default {
     },
     edit (row) {
       this.dialogForm.title = '编辑'
+      this.dialogForm.form.option = 'edit'
       this.dialogForm.show = true
       this.dialogForm.form.formData = JSON.parse(JSON.stringify(row))
     },
     create (row) {
       this.dialogForm.title = '新增'
+      this.dialogForm.form.option = 'create'
       this.dialogForm.show = true
       this.dialogForm.form.formData = {role: 'user'}
     },
