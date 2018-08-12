@@ -12,7 +12,9 @@ Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.prototype.$BUS = new Vue()
 
-if (process.env.NODE_ENV === 'development') require('@/mock')
+require('@/mock')
+// if (process.env.NODE_ENV === 'development') require('@/mock')
+
 /* eslint-disable no-new */
 
 new Vue({

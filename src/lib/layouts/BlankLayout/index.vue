@@ -23,6 +23,5 @@ export default {
   overflow: hidden;
   width: 100vw;
   height: 100vh;
-  background: #ccc url(/static/wallpaper/wallpaper-1.jpg) no-repeat center/cover;
 }
 </style>

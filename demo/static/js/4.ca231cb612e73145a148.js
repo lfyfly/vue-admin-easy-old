@@ -1,0 +1,2 @@
+webpackJsonp([4],{"20Xv":function(t,e,s){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r={render:function(){var t=this.$createElement,e=this._self._c||t;return e("div",{staticClass:"forget-password"},[e("h3",[this._v(this._s(this.msg))])])},staticRenderFns:[]};var n=s("VU/8")({name:"forget-password",data:function(){return{msg:"this is from forget-password.vue"}}},r,!1,function(t){s("F31u")},"data-v-6c95e182",null);e.default=n.exports},F31u:function(t,e){}});
+//# sourceMappingURL=4.ca231cb612e73145a148.js.map

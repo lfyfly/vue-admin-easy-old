@@ -21,7 +21,7 @@ export default {
   data () {
     return {
       msg: 'this is from img-captcha-input.vue',
-      captchaUrl: '/static/img/mock-cptcha.gif',
+      captchaUrl: 'static/img/mock-cptcha.gif',
       radom: ''
     }
   },

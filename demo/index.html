@@ -1,0 +1,167 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=Cache-Control content="no-cache, no-store, must-revalidate"><meta http-equiv=Pragma content=no-cache><meta http-equiv=Expires content=0><title>vue-admin-easy</title><style>@-webkit-keyframes rotate_pacman_half_up {
+      0% {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+      }
+
+      50% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+      }
+    }
+
+    @keyframes rotate_pacman_half_up {
+      0% {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+      }
+
+      50% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+      }
+    }
+
+    @-webkit-keyframes rotate_pacman_half_down {
+      0% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+
+      50% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+    }
+
+    @keyframes rotate_pacman_half_down {
+      0% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+
+      50% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+    }
+
+    @-webkit-keyframes pacman-balls {
+      75% {
+        opacity: 0.7;
+      }
+
+      100% {
+        -webkit-transform: translate(-100px, -6.25px);
+        transform: translate(-100px, -6.25px);
+      }
+    }
+
+    @keyframes pacman-balls {
+      75% {
+        opacity: 0.7;
+      }
+
+      100% {
+        -webkit-transform: translate(-100px, -6.25px);
+        transform: translate(-100px, -6.25px);
+      }
+    }
+    #loading{
+      margin-top: 100px;
+      overflow: hidden;
+    }
+    .pacman {
+      position: relative;
+      left: 50%;
+      margin-left: -25px;
+    }
+      .loading-text{
+        color: #409EFF;
+        text-align: center;
+        margin-top: 10px;
+        font-size: 13px;
+      }
+    .pacman>div:nth-child(2) {
+      -webkit-animation: pacman-balls 1s 0s infinite linear;
+      animation: pacman-balls 1s 0s infinite linear;
+    }
+
+    .pacman>div:nth-child(3) {
+      -webkit-animation: pacman-balls 1s 0.33s infinite linear;
+      animation: pacman-balls 1s 0.33s infinite linear;
+    }
+
+    .pacman>div:nth-child(4) {
+      -webkit-animation: pacman-balls 1s 0.66s infinite linear;
+      animation: pacman-balls 1s 0.66s infinite linear;
+    }
+
+    .pacman>div:nth-child(5) {
+      -webkit-animation: pacman-balls 1s 0.99s infinite linear;
+      animation: pacman-balls 1s 0.99s infinite linear;
+    }
+
+    .pacman>div:first-of-type {
+      width: 0px;
+      height: 0px;
+      border-right: 25px solid transparent;
+      border-top: 25px solid #409EFF;
+      border-left: 25px solid #409EFF;
+      border-bottom: 25px solid #409EFF;
+      border-radius: 25px;
+      -webkit-animation: rotate_pacman_half_up 0.5s 0s infinite;
+      animation: rotate_pacman_half_up 0.5s 0s infinite;
+    }
+
+    .pacman>div:nth-child(2) {
+      width: 0px;
+      height: 0px;
+      border-right: 25px solid transparent;
+      border-top: 25px solid #409EFF;
+      border-left: 25px solid #409EFF;
+      border-bottom: 25px solid #409EFF;
+      border-radius: 25px;
+      -webkit-animation: rotate_pacman_half_down 0.5s 0s infinite;
+      animation: rotate_pacman_half_down 0.5s 0s infinite;
+      margin-top: -50px;
+    }
+
+    .pacman>div:nth-child(3),
+    .pacman>div:nth-child(4),
+    .pacman>div:nth-child(5),
+    .pacman>div:nth-child(6) {
+      background-color: #409EFF;
+      width: 15px;
+      height: 15px;
+      border-radius: 100%;
+      margin: 2px;
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      -webkit-transform: translate(0, -6.25px);
+      -ms-transform: translate(0, -6.25px);
+      transform: translate(0, -6.25px);
+      top: 25px;
+      left: 100px;
+    }</style><link href=./static/css/app.4965820879da43f1277d5a3544f65aae.css rel=stylesheet></head><body><div id=app><div id=loading><div class="loader-inner pacman"><div></div><div></div><div></div><div></div><div></div></div><div class=loading-text>加载中...</div></div></div><script type=text/javascript src=./static/js/manifest.762bca3a6a22dac56922.js></script><script type=text/javascript src=./static/js/vendor.91ea6ca06caabf5b183c.js></script><script type=text/javascript src=./static/js/app.31c2fa14b0252eb6497d.js></script></body></html>
