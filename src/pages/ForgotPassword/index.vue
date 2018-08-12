@@ -1,16 +1,10 @@
 <template>
-  <div class="register-page">
-    <div class="register-card">
+  <div class="forgot-password-page">
+    <div class="forgot-password-card">
       <div class="form-title">{{formTitle}}</div>
-      <el-form class="register-form" :rules="rules" ref="register" :model="formData">
+      <el-form :model="formData" class="forgot-password-form" :rules="rules" ref="formData">
         <el-form-item prop="email">
-          <el-input v-model.trim="formData.email" placeholder="请输入邮箱"></el-input>
-        </el-form-item>
-        <el-form-item prop="password">
-          <el-input id="register-password" v-model.trim="formData.password" type="password" placeholder="请输入密码"></el-input>
-        </el-form-item>
-        <el-form-item prop="repeatPassword">
-          <el-input v-model.trim="formData.repeatPassword" type="password" placeholder="请确认密码"></el-input>
+          <el-input v-model.trim="formData.email" placeholder="请输入注册时邮箱"></el-input>
         </el-form-item>
         <el-form-item prop="captcha">
           <img-captcha-input>
@@ -18,11 +12,11 @@
           </img-captcha-input>
         </el-form-item>
 
-        <el-form-item class="register-btn-contianer">
-          <el-button class="register-btn" type="primary" @click="onSubmit('register')">注册</el-button>
+        <el-form-item class="forgot-password-btn-contianer">
+          <el-button class="forgot-password-btn" type="primary" @click="onSubmit('formData')">发送邮件</el-button>
           <div class="other-option">
-            <router-link class="to-register" to="/login">已有账号，去登录</router-link>
-            <router-link class="to-forgot" to="/forgot-password">忘记密码</router-link>
+            <router-link class="to-forgot-password" to="/login">想起密码，去登录</router-link>
+            <router-link class="to-register" to="/register">还没有账号，去注册</router-link>
           </div>
         </el-form-item>
       </el-form>
@@ -31,37 +25,25 @@
 </template>
 
 <script>
-import validators from '../_validators'
 import imgCaptchaInput from '@/pages/_components/formItems/input/img-captcha-input'
 
 export default {
-  name: 'register',
+  name: 'forgot-password',
   components: {
     imgCaptchaInput
   },
   data () {
     return {
-      msg: 'this is from register.vue',
-      formTitle: '用户注册',
+      msg: 'this is from forgot-password.vue',
+      formTitle: '找回密码',
       formData: {
         email: '',
-        password: '',
-        repeatPassword: '',
         captcha: ''
       },
       rules: {
         email: [
           { required: true, message: '请输入邮箱', trigger: 'blur' },
           { type: 'email', message: '邮箱格式不正确', trigger: 'blur' }
-        ],
-        password: [
-          { required: true, message: '请输入密码', trigger: 'blur' },
-          { min: 6, max: 16, message: '密码长度在 6 到 16 个字符', trigger: 'blur' },
-          { validator: validators.isPassword, trigger: 'blur' }
-        ],
-        repeatPassword: [
-          { required: true, message: '请确认密码', trigger: 'blur' },
-          { validator: validators.equalTo('#register-password'), message: '密码输入不一致', trigger: 'blur' }
         ],
         captcha: [
           { required: true, message: '请输入验证码', trigger: 'blur' }
@@ -88,12 +70,12 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-.register-page {
+.forgot-password-page {
   overflow: hidden;
   width: 100vw;
   height: 100vh;
   background: #ccc url($page-bg-image) no-repeat center/cover;
-  .register-card {
+  .forgot-password-card {
     width: 310px;
     margin: 100px auto 0;
     background: rgba(255, 255, 255, 0.7);
@@ -106,7 +88,7 @@ export default {
       margin-bottom: 25px;
       font-size: 20px;
     }
-    .register-captcha {
+    .forgot-password-captcha {
       display: flex;
       .captcha-img {
         width: 200px;
@@ -115,7 +97,7 @@ export default {
         cursor: pointer;
       }
     }
-    .register-btn {
+    .forgot-password-btn {
       width: 100%;
     }
     .other-option {

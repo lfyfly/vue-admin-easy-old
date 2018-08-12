@@ -20,8 +20,8 @@ export default [
     }
   },
   {
-    path: '/forget-password',
-    component: () => import('@/pages/ForgetPassword'),
+    path: '/forgot-password',
+    component: () => import('@/pages/ForgotPassword'),
     meta: {
       layout: 'BlankLayout'
     }

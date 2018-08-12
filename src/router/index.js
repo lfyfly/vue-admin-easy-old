@@ -29,7 +29,8 @@ router.beforeEach(async (to, from, next) => {
   }
 
   if (!tocken) {
-    if (to.path === '/login') {
+    // 游客路由可以被通过
+    if (guestRouter.filter(route => to.path === route.path).length !== 0) {
       next()
       return
     }
