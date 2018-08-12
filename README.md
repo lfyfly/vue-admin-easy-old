@@ -1,6 +1,6 @@
 # vue-admin-easy
 > 致力于简单易用，可扩展的后台脚手架
-# [线上DEMO]()
+# [线上DEMO](https://lfyfly.gitee.io/vue-admin-easy)
 ## 一、自定义布局
 ### 目录结构
 
