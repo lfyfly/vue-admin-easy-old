@@ -1,7 +1,7 @@
 export default [
   {
     id: '0',
-    email: '1@qq.com',
+    email: '0@qq.com',
     username: 'aaa',
     avatar: '/static/img/test-avartar.jpg',
     phone: '13011111111',
@@ -12,7 +12,7 @@ export default [
   },
   {
     id: '1',
-    email: '2@qq.com',
+    email: '1@qq.com',
     username: 'bbb',
     avatar: '/static/img/test-avartar.jpg',
     phone: '13022222222',
@@ -23,7 +23,7 @@ export default [
   },
   {
     id: '2',
-    email: '3@qq.com',
+    email: '2@qq.com',
     username: 'ccc',
     avatar: '/static/img/test-avartar.jpg',
     phone: '13033333333',
