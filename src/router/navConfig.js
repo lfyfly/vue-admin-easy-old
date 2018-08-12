@@ -28,21 +28,21 @@ export default [
     sideNav: [
       {
         title: '首页',
-        icon: 'el-icon-tickets',
+        icon: 'fa-home',
         children: [
           { title: '首页', path: '/index' }
         ]
       },
       {
         title: '用户管理',
-        icon: 'el-icon-tickets',
+        icon: 'fa-users',
         children: [
           { title: '用户表', path: '/users' }
         ]
       },
       {
         title: 'a1',
-        icon: 'el-icon-tickets',
+        icon: 'fa-bitcoin',
         children: [
           { title: 'a1-1', path: '/a1/1' },
           { title: 'a1-2', path: '/a1/2' },
@@ -51,7 +51,7 @@ export default [
       },
       {
         title: 'a2',
-        icon: 'el-icon-tickets',
+        icon: 'fa-cny',
         children: [
           { title: 'a2-1', path: '/a2/1' },
           { title: 'a2-2', path: '/a2/2' },
@@ -66,7 +66,7 @@ export default [
     sideNav: [
       {
         title: 'b1',
-        icon: 'fa fa-superpowers',
+        icon: 'fa-dollar',
         children: [
           { title: 'b1-1', path: '/b1/1' },
           { title: 'b1-2', path: '/b1/2' },
@@ -75,7 +75,7 @@ export default [
       },
       {
         title: 'b2',
-        icon: 'el-icon-tickets',
+        icon: 'fa-eur',
         children: [
           { title: 'b2-1', path: '/b2/1' },
           { title: 'b2-2', path: '/b2/2' },

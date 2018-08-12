@@ -1,7 +1,7 @@
 <template>
   <div class="table-page users">
     <h2 class="table-title">用户表</h2>
-    <el-button type="primary" @click="create">新增</el-button>
+    <el-button type="primary" size="small" @click="create">新增</el-button>
     <!-- 操作栏 -->
     <!-- 搜索 批量操作 导出 -->
     <el-table v-if="tableData" :data="tableData" style="width: 100%">

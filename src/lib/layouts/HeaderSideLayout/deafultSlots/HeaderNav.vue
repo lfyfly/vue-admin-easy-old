@@ -2,7 +2,7 @@
   <div class="header-nav">
     <ul>
       <li :class="{isActive:sideNavAcitveIndex===i}" v-for="(navItem,i) in headerNav" @click="toggleSideNav(i)" :key="navItem.title">
-        <router-link :to="navItem.path"><i :class="navItem.icon"></i> {{navItem.title}}</router-link>
+        <router-link :to="navItem.path"><i :class="[navItem.icon, { fa: navItem.icon&&navItem.icon.indexOf('fa-')!==-1 } ]"></i> {{navItem.title}}</router-link>
       </li>
     </ul>
   </div>

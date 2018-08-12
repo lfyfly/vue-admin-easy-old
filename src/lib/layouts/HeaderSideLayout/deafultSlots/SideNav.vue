@@ -7,12 +7,12 @@
       <el-menu class="el-side-nav" :router="true" :default-active="$route.path" :collapse="navCollapse">
         <template v-for="v in sideNav.sideNav">
           <el-menu-item v-if="v.children.length===1" :class="{'is-active': $route.path === v.children[0].path}" :index="v.children[0].path" :key="v.title">
-            <i :class="v.icon" class="side-nav-icon"></i>
+            <i :class="[v.icon, { fa: v.icon&&v.icon.indexOf('fa-')!==-1 } ]" class="side-nav-icon"></i>
             <span slot="title">{{v.children[0].title}}</span>
           </el-menu-item>
           <el-submenu v-else :index="v.title" :show-timeout="200" :hide-timeout="200" :key="v.title">
             <template v-if="v.title" slot="title">
-              <i :class="v.icon" class="side-nav-icon"></i>
+              <i :class="[v.icon, { fa: v.icon&&v.icon.indexOf('fa-')!==-1 } ]" class="side-nav-icon"></i>
               <span>{{v.title}}</span>
             </template>
             <el-menu-item v-for="v2 in v.children" :key="v2.title" :index="v2.path">
