@@ -8,7 +8,7 @@ export default [
     role: 'admin',
     password: '111111',
     state: 0,
-    routers: ['/index', '/users', '/personal', '/a1/1', '/a1/2', '/a2/1', '/a2/2', '/b1/1', '/b1/2', '/b2/1']
+    routers: ['/index', '/users', '/a1/1', '/a1/2', '/a2/1', '/a2/2', '/b1/1', '/b1/2', '/b2/1']
   },
   {
     id: '1',
@@ -19,7 +19,7 @@ export default [
     role: 'admin',
     password: '111111',
     state: 0,
-    routers: ['/index', '/users', '/personal', '/a1/1', '/a1/2', '/a2/1', '/a2/2', '/b1/1', '/b1/2', '/b2/1']
+    routers: ['/index', '/users', '/a1/1', '/a1/2', '/a2/1', '/a2/2', '/b1/1', '/b1/2', '/b2/1']
   },
   {
     id: '2',
@@ -30,6 +30,6 @@ export default [
     role: 'admin',
     password: '111111',
     state: 0,
-    routers: ['/index', '/users', '/personal', '/a1/1', '/a1/2', '/a2/1', '/a2/2', '/b1/1', '/b1/2', '/b2/1']
+    routers: ['/index', '/users', '/a1/1', '/a1/2', '/a2/1', '/a2/2', '/b1/1', '/b1/2', '/b2/1']
   }
 ]

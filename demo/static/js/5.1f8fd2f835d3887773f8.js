@@ -1,2 +1,0 @@
-webpackJsonp([5],{"2REn":function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var s={render:function(){var e=this.$createElement,t=this._self._c||e;return t("div",{staticClass:"index"},[t("h3",[this._v(this._s(this.msg))])])},staticRenderFns:[]};var i=n("VU/8")({name:"index",data:function(){return{msg:"this is from index.vue"}}},s,!1,function(e){n("gKmj")},"data-v-59b01200",null);t.default=i.exports},gKmj:function(e,t){}});
-//# sourceMappingURL=5.1f8fd2f835d3887773f8.js.map

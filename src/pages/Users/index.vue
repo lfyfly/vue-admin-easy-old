@@ -152,7 +152,7 @@ export default {
       }
     },
     submit () {
-      alert(JSON.stringify(this.dialogForm.form.formData))
+      // alert(JSON.stringify(this.dialogForm.form.formData))
       api.users[this.dialogForm.title === '编辑' ? 'put' : 'post'](this.dialogForm.form.formData).then((res) => {
         this.cancel()
         if (res.data.type === 'success') this.getTableData()

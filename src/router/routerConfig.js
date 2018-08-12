@@ -1,17 +1,10 @@
 // pages
-import Personal from '@/pages/Personal'
 
 // const Test = () => import('@/pages/Test')
 import Test from '@/pages/Test'
 
 export default [
-  {
-    path: '/personal',
-    component: Personal,
-    meta: {
-      layout: 'HeaderSideLayout'
-    }
-  },
+
   {
     path: '/index',
     component: () => import('@/pages/Index'),

@@ -1,2 +1,0 @@
-webpackJsonp([3],{pM97:function(e,s){},roEI:function(e,s,t){"use strict";Object.defineProperty(s,"__esModule",{value:!0});var r={render:function(){var e=this.$createElement,s=this._self._c||e;return s("div",{staticClass:"reset-password"},[s("h3",[this._v(this._s(this.msg))])])},staticRenderFns:[]};var n=t("VU/8")({name:"reset-password",data:function(){return{msg:"this is from reset-password.vue"}}},r,!1,function(e){t("pM97")},"data-v-87b1a3e8",null);s.default=n.exports}});
-//# sourceMappingURL=3.026bf29e39ab8676075c.js.map

@@ -1,2 +1,0 @@
-webpackJsonp([2],{JESS:function(e,t){},kprW:function(e,t,s){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r={render:function(){var e=this.$createElement,t=this._self._c||e;return t("div",{staticClass:"register"},[t("h3",[this._v(this._s(this.msg))])])},staticRenderFns:[]};var i=s("VU/8")({name:"register",data:function(){return{msg:"this is from register.vue"}}},r,!1,function(e){s("JESS")},"data-v-d1820ff2",null);t.default=i.exports}});
-//# sourceMappingURL=2.27b152d8c64b38747559.js.map
