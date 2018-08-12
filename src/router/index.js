@@ -26,6 +26,7 @@ router.beforeEach(async (to, from, next) => {
     next()
     return
   }
+
   if (!tocken) {
     if (to.path === '/login') {
       next()
@@ -37,8 +38,16 @@ router.beforeEach(async (to, from, next) => {
       next('/')
       return
     }
+    // 获取用户信息
     await api.personal.get()
 
+    // 用户信息获取失败
+    if (!store.state.myInfo) {
+      // 移除无效tocken
+      localStorage.removeItem(config.tockenKey)
+      next('/login')
+      return
+    }
     let routers = store.state.myInfo && store.state.myInfo.routers
     console.log('用户权限路由', routers)
     // 1. 对路由进行过滤
