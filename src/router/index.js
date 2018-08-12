@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import guestRouter from './guestRouter'
+import userCommonRouter from './userCommonRouter'
 import routerConfig from './routerConfig'
 import navConfig from './navConfig'
 import until from '@/until'
@@ -58,7 +59,7 @@ router.beforeEach(async (to, from, next) => {
     let filterNavConfig = until.filterNavConfig(navConfig, routers)
     store.commit('setHeaderNav', filterNavConfig.headerNav)
     store.commit('setNavConfig', filterNavConfig.navConfig)
-    router.addRoutes(filterRouterConfig.concat([{ path: '*', redirect: '/404' }]))
+    router.addRoutes(filterRouterConfig.concat(userCommonRouter))
     router.push(to.path)
     next(false)
     // console.log(JSON.stringify(filterRouterConfig, null, 2))

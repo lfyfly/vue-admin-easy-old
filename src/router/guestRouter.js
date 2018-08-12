@@ -32,12 +32,5 @@ export default [
     meta: {
       layout: 'BlankLayout'
     }
-  },
-  {
-    path: '/404',
-    component: () => import('@/pages/NotFind'),
-    meta: {
-      layout: 'HeaderSideLayout'
-    }
   }
 ]
