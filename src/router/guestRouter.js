@@ -37,7 +37,7 @@ export default [
     path: '/404',
     component: () => import('@/pages/NotFind'),
     meta: {
-      layout: 'BlankLayout'
+      layout: 'HeaderSideLayout'
     }
   }
 ]

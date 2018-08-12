@@ -1,7 +1,6 @@
 <template>
   <div class="not-find">
-    <h3>{{msg}}</h3>
-    <h3>404</h3>
+    <img class="not-find-img" src="~@/assets/img/404/404_1.jpg" alt="">
   </div>
 </template>
 
@@ -17,7 +16,12 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-.not-find{
+.not-find {
+  padding-top: 40px;
+  .not-find-img {
+    display: block;
+    margin: 0 auto;
+  }
 
 }
 </style>
